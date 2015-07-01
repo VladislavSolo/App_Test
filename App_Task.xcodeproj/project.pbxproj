@@ -50,7 +50,6 @@
 		86A95B161B434F7D006325B9 /* App_TaskTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = App_TaskTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		86A95B1B1B434F7D006325B9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		86A95B1C1B434F7D006325B9 /* App_TaskTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = App_TaskTests.m; sourceTree = "<group>"; };
-		86D275281B446A1000BDD233 /* VSHTTPManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VSHTTPManager.h; path = API/VSHTTPManager.h; sourceTree = "<group>"; };
 		86D275291B446A1000BDD233 /* VSHTTPManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VSHTTPManager.m; path = API/VSHTTPManager.m; sourceTree = "<group>"; };
 		86D2752C1B447AFE00BDD233 /* VSCitation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VSCitation.h; path = Model/VSCitation.h; sourceTree = "<group>"; };
 		86D2752D1B447AFE00BDD233 /* VSCitation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VSCitation.m; path = Model/VSCitation.m; sourceTree = "<group>"; };
@@ -62,6 +61,7 @@
 		86D275371B4487AD00BDD233 /* VSWidgetViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VSWidgetViewController.m; path = Controller/VSWidgetViewController.m; sourceTree = "<group>"; };
 		86D2753A1B448A9C00BDD233 /* VSCitationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VSCitationView.h; path = VIew/VSCitationView.h; sourceTree = SOURCE_ROOT; };
 		86D2753B1B448A9C00BDD233 /* VSCitationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VSCitationView.m; path = VIew/VSCitationView.m; sourceTree = SOURCE_ROOT; };
+		86D275431B449A6A00BDD233 /* VSHTTPManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VSHTTPManager.h; path = API/VSHTTPManager.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -169,7 +169,7 @@
 		86D275271B44699F00BDD233 /* API */ = {
 			isa = PBXGroup;
 			children = (
-				86D275281B446A1000BDD233 /* VSHTTPManager.h */,
+				86D275431B449A6A00BDD233 /* VSHTTPManager.h */,
 				86D275291B446A1000BDD233 /* VSHTTPManager.m */,
 			);
 			name = API;
