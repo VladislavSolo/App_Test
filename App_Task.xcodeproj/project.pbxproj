@@ -16,6 +16,8 @@
 		86A95B111B434F7D006325B9 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 86A95B0F1B434F7D006325B9 /* LaunchScreen.xib */; };
 		86A95B1D1B434F7D006325B9 /* App_TaskTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 86A95B1C1B434F7D006325B9 /* App_TaskTests.m */; };
 		86D275261B44505600BDD233 /* VSPageContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 86D275251B44505600BDD233 /* VSPageContentViewController.m */; };
+		86D2752A1B446A1000BDD233 /* VSHTTPManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 86D275291B446A1000BDD233 /* VSHTTPManager.m */; };
+		86D2752E1B447AFE00BDD233 /* VSCitation.m in Sources */ = {isa = PBXBuildFile; fileRef = 86D2752D1B447AFE00BDD233 /* VSCitation.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +49,10 @@
 		86A95B1C1B434F7D006325B9 /* App_TaskTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = App_TaskTests.m; sourceTree = "<group>"; };
 		86D275241B44505600BDD233 /* VSPageContentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VSPageContentViewController.h; path = Controller/VSPageContentViewController.h; sourceTree = "<group>"; };
 		86D275251B44505600BDD233 /* VSPageContentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VSPageContentViewController.m; path = Controller/VSPageContentViewController.m; sourceTree = "<group>"; };
+		86D275281B446A1000BDD233 /* VSHTTPManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VSHTTPManager.h; path = API/VSHTTPManager.h; sourceTree = "<group>"; };
+		86D275291B446A1000BDD233 /* VSHTTPManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VSHTTPManager.m; path = API/VSHTTPManager.m; sourceTree = "<group>"; };
+		86D2752C1B447AFE00BDD233 /* VSCitation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VSCitation.h; path = Model/VSCitation.h; sourceTree = "<group>"; };
+		86D2752D1B447AFE00BDD233 /* VSCitation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VSCitation.m; path = Model/VSCitation.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +106,8 @@
 			isa = PBXGroup;
 			children = (
 				86A95B0A1B434F7D006325B9 /* Main.storyboard */,
+				86D2752B1B447ADD00BDD233 /* Model */,
+				86D275271B44699F00BDD233 /* API */,
 				86D275231B44501500BDD233 /* Controller */,
 				86A95B041B434F7D006325B9 /* AppDelegate.h */,
 				86A95B051B434F7D006325B9 /* AppDelegate.m */,
@@ -145,6 +153,24 @@
 				86D275251B44505600BDD233 /* VSPageContentViewController.m */,
 			);
 			name = Controller;
+			sourceTree = "<group>";
+		};
+		86D275271B44699F00BDD233 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				86D275281B446A1000BDD233 /* VSHTTPManager.h */,
+				86D275291B446A1000BDD233 /* VSHTTPManager.m */,
+			);
+			name = API;
+			sourceTree = "<group>";
+		};
+		86D2752B1B447ADD00BDD233 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				86D2752C1B447AFE00BDD233 /* VSCitation.h */,
+				86D2752D1B447AFE00BDD233 /* VSCitation.m */,
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 		BDD1C5CED3CAC4B61BF640ED /* Pods */ = {
@@ -292,8 +318,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				86D2752A1B446A1000BDD233 /* VSHTTPManager.m in Sources */,
 				86A95B091B434F7D006325B9 /* ViewController.m in Sources */,
 				86A95B061B434F7D006325B9 /* AppDelegate.m in Sources */,
+				86D2752E1B447AFE00BDD233 /* VSCitation.m in Sources */,
 				86D275261B44505600BDD233 /* VSPageContentViewController.m in Sources */,
 				86A95B031B434F7D006325B9 /* main.m in Sources */,
 			);
