@@ -23,24 +23,32 @@
             </objects>
             <point key="canvasLocation" x="367" y="337"/>
         </scene>
-        <!--Page Content View Controller-->
-        <scene sceneID="apK-o0-Jzh">
+        <!--Widget View Controller-->
+        <scene sceneID="7gR-KL-sLy">
             <objects>
-                <viewController storyboardIdentifier="PageContentViewController" id="FHE-aL-jKP" customClass="VSPageContentViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PageContentViewController" id="Jvj-UW-9wj" customClass="VSWidgetViewController" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="d63-tH-6Ei"/>
-                        <viewControllerLayoutGuide type="bottom" id="rwA-2a-Bxy"/>
+                        <viewControllerLayoutGuide type="top" id="34S-QB-3Zt"/>
+                        <viewControllerLayoutGuide type="bottom" id="Noo-9O-tgF"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="3xC-tV-OV3">
+                    <view key="view" contentMode="scaleToFill" id="0ni-Bh-bzE">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="79n-Bw-72q" customClass="ZLSwipeableView">
+                                <rect key="frame" x="56" y="76" width="262" height="380"/>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="swipeableView" destination="79n-Bw-72q" id="17D-0m-BMx"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="qHq-EK-fkv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tDq-yl-rtN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="825.5" y="1062.5"/>
+            <point key="canvasLocation" x="831.5" y="336.5"/>
         </scene>
         <!--Page View Controller-->
         <scene sceneID="tMq-vH-k7f">

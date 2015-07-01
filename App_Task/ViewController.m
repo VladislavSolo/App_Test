@@ -7,9 +7,9 @@
 //
 
 #import "ViewController.h"
-#import "VSPageContentViewController.h"
+#import "VSWidgetViewController.h"
 
-@interface ViewController ()
+@interface ViewController () <UIPageViewControllerDataSource>
 
 @end
 
@@ -23,7 +23,7 @@
     self.pageViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"PageViewController"];
     self.pageViewController.dataSource = self;
     
-    VSPageContentViewController* startingViewController = [self viewControllerAtIndex:0];
+    VSWidgetViewController* startingViewController = [self viewControllerAtIndex:0];
     NSArray* viewControllers = @[startingViewController];
     
     [self.pageViewController setViewControllers:viewControllers
@@ -44,10 +44,12 @@
     // Dispose of any resources that can be recreated.
 }
 
+#pragma mark - Page View Controller Data Source
+
 - (UIViewController *)pageViewController:(UIPageViewController *)pageViewController
       viewControllerBeforeViewController:(UIViewController *)viewController {
     
-    NSUInteger index = ((VSPageContentViewController *)viewController).pageIndex;
+    NSUInteger index = ((VSWidgetViewController *)viewController).pageIndex;
     
     if (index == 0 || index == NSNotFound) {
         return nil;
@@ -61,7 +63,7 @@
 - (UIViewController *)pageViewController:(UIPageViewController *)pageViewController
        viewControllerAfterViewController:(UIViewController *)viewController {
     
-    NSUInteger index = ((VSPageContentViewController *)viewController).pageIndex;
+    NSUInteger index = ((VSWidgetViewController *)viewController).pageIndex;
     
     if (index == NSNotFound) {
         return nil;
@@ -76,14 +78,14 @@
     return [self viewControllerAtIndex:index];
 }
 
-- (VSPageContentViewController *)viewControllerAtIndex:(NSUInteger)index {
+- (VSWidgetViewController *)viewControllerAtIndex:(NSUInteger)index {
     
     if ([self.pageTitles count] == 0 || index >= [self.pageTitles count]) {
         
         return nil;
     }
     
-    VSPageContentViewController* pageContentViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"PageContentViewController"];
+    VSWidgetViewController* pageContentViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"PageContentViewController"];
     pageContentViewController.pageIndex = index;
     
     return pageContentViewController;

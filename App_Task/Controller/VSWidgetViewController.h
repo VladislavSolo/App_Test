@@ -10,4 +10,6 @@
 
 @interface VSWidgetViewController : UIViewController
 
+@property (assign, nonatomic) NSUInteger pageIndex;
+
 @end

@@ -23,15 +23,7 @@
     pageControl.pageIndicatorTintColor = [UIColor lightGrayColor];
     pageControl.currentPageIndicatorTintColor = [UIColor blackColor];
     pageControl.backgroundColor = [UIColor whiteColor];
-    
-    VSHTTPManager* manager = [[VSHTTPManager alloc] init];
-    
-    [manager getRandomCitationOnSuccess:^(VSCitation *citation) {
-        
-    } onFailure:^(NSError *error) {
-        
-    }];
-    
+
     return YES;
 }
 
