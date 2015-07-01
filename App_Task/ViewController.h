@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController <UIPageViewControllerDataSource>
+@interface ViewController : UIViewController
 
 @property (strong, nonatomic) UIPageViewController* pageViewController;
 @property (strong, nonatomic) NSArray *pageTitles;

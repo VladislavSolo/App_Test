@@ -1,14 +1,14 @@
 //
-//  VSPageViewController.h
+//  VSWidgetViewController.h
 //  App_Task
 //
 //  Created by Владислав Станишевский on 7/1/15.
 //  Copyright (c) 2015 Vlad Stanishevskij. All rights reserved.
 //
 
-#import "ViewController.h"
+#import <UIKit/UIKit.h>
 
-@interface VSPageContentViewController : UIViewController 
+@interface VSWidgetViewController : UIViewController
 
 @property (assign, nonatomic) NSUInteger pageIndex;
 

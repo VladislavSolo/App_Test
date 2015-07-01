@@ -15,9 +15,12 @@
 		86A95B0E1B434F7D006325B9 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 86A95B0D1B434F7D006325B9 /* Images.xcassets */; };
 		86A95B111B434F7D006325B9 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 86A95B0F1B434F7D006325B9 /* LaunchScreen.xib */; };
 		86A95B1D1B434F7D006325B9 /* App_TaskTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 86A95B1C1B434F7D006325B9 /* App_TaskTests.m */; };
-		86D275261B44505600BDD233 /* VSPageContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 86D275251B44505600BDD233 /* VSPageContentViewController.m */; };
 		86D2752A1B446A1000BDD233 /* VSHTTPManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 86D275291B446A1000BDD233 /* VSHTTPManager.m */; };
 		86D2752E1B447AFE00BDD233 /* VSCitation.m in Sources */ = {isa = PBXBuildFile; fileRef = 86D2752D1B447AFE00BDD233 /* VSCitation.m */; };
+		86D275341B4486FC00BDD233 /* ZLPanGestureRecognizer.m in Sources */ = {isa = PBXBuildFile; fileRef = 86D275311B4486FC00BDD233 /* ZLPanGestureRecognizer.m */; };
+		86D275351B4486FC00BDD233 /* ZLSwipeableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 86D275331B4486FC00BDD233 /* ZLSwipeableView.m */; };
+		86D275381B4487AD00BDD233 /* VSWidgetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 86D275371B4487AD00BDD233 /* VSWidgetViewController.m */; };
+		86D2753C1B448A9C00BDD233 /* VSCitationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 86D2753B1B448A9C00BDD233 /* VSCitationView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,12 +50,18 @@
 		86A95B161B434F7D006325B9 /* App_TaskTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = App_TaskTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		86A95B1B1B434F7D006325B9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		86A95B1C1B434F7D006325B9 /* App_TaskTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = App_TaskTests.m; sourceTree = "<group>"; };
-		86D275241B44505600BDD233 /* VSPageContentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VSPageContentViewController.h; path = Controller/VSPageContentViewController.h; sourceTree = "<group>"; };
-		86D275251B44505600BDD233 /* VSPageContentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VSPageContentViewController.m; path = Controller/VSPageContentViewController.m; sourceTree = "<group>"; };
-		86D275281B446A1000BDD233 /* VSHTTPManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VSHTTPManager.h; path = API/VSHTTPManager.h; sourceTree = "<group>"; };
 		86D275291B446A1000BDD233 /* VSHTTPManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VSHTTPManager.m; path = API/VSHTTPManager.m; sourceTree = "<group>"; };
 		86D2752C1B447AFE00BDD233 /* VSCitation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VSCitation.h; path = Model/VSCitation.h; sourceTree = "<group>"; };
 		86D2752D1B447AFE00BDD233 /* VSCitation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VSCitation.m; path = Model/VSCitation.m; sourceTree = "<group>"; };
+		86D275301B4486FC00BDD233 /* ZLPanGestureRecognizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ZLPanGestureRecognizer.h; path = ZLSwipeableView/ZLPanGestureRecognizer.h; sourceTree = SOURCE_ROOT; };
+		86D275311B4486FC00BDD233 /* ZLPanGestureRecognizer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ZLPanGestureRecognizer.m; path = ZLSwipeableView/ZLPanGestureRecognizer.m; sourceTree = SOURCE_ROOT; };
+		86D275321B4486FC00BDD233 /* ZLSwipeableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ZLSwipeableView.h; path = ZLSwipeableView/ZLSwipeableView.h; sourceTree = SOURCE_ROOT; };
+		86D275331B4486FC00BDD233 /* ZLSwipeableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ZLSwipeableView.m; path = ZLSwipeableView/ZLSwipeableView.m; sourceTree = SOURCE_ROOT; };
+		86D275361B4487AD00BDD233 /* VSWidgetViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VSWidgetViewController.h; path = Controller/VSWidgetViewController.h; sourceTree = "<group>"; };
+		86D275371B4487AD00BDD233 /* VSWidgetViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VSWidgetViewController.m; path = Controller/VSWidgetViewController.m; sourceTree = "<group>"; };
+		86D2753A1B448A9C00BDD233 /* VSCitationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VSCitationView.h; path = VIew/VSCitationView.h; sourceTree = SOURCE_ROOT; };
+		86D2753B1B448A9C00BDD233 /* VSCitationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VSCitationView.m; path = VIew/VSCitationView.m; sourceTree = SOURCE_ROOT; };
+		86D275431B449A6A00BDD233 /* VSHTTPManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VSHTTPManager.h; path = API/VSHTTPManager.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,10 +118,12 @@
 				86D2752B1B447ADD00BDD233 /* Model */,
 				86D275271B44699F00BDD233 /* API */,
 				86D275231B44501500BDD233 /* Controller */,
+				86D275391B448A6A00BDD233 /* View */,
 				86A95B041B434F7D006325B9 /* AppDelegate.h */,
 				86A95B051B434F7D006325B9 /* AppDelegate.m */,
 				86A95B0D1B434F7D006325B9 /* Images.xcassets */,
 				86A95B0F1B434F7D006325B9 /* LaunchScreen.xib */,
+				86D2752F1B4486C100BDD233 /* ZLSwipeableView */,
 				86A95B001B434F7D006325B9 /* Supporting Files */,
 			);
 			path = App_Task;
@@ -149,8 +160,8 @@
 			children = (
 				86A95B071B434F7D006325B9 /* ViewController.h */,
 				86A95B081B434F7D006325B9 /* ViewController.m */,
-				86D275241B44505600BDD233 /* VSPageContentViewController.h */,
-				86D275251B44505600BDD233 /* VSPageContentViewController.m */,
+				86D275361B4487AD00BDD233 /* VSWidgetViewController.h */,
+				86D275371B4487AD00BDD233 /* VSWidgetViewController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -158,7 +169,7 @@
 		86D275271B44699F00BDD233 /* API */ = {
 			isa = PBXGroup;
 			children = (
-				86D275281B446A1000BDD233 /* VSHTTPManager.h */,
+				86D275431B449A6A00BDD233 /* VSHTTPManager.h */,
 				86D275291B446A1000BDD233 /* VSHTTPManager.m */,
 			);
 			name = API;
@@ -171,6 +182,26 @@
 				86D2752D1B447AFE00BDD233 /* VSCitation.m */,
 			);
 			name = Model;
+			sourceTree = "<group>";
+		};
+		86D2752F1B4486C100BDD233 /* ZLSwipeableView */ = {
+			isa = PBXGroup;
+			children = (
+				86D275301B4486FC00BDD233 /* ZLPanGestureRecognizer.h */,
+				86D275311B4486FC00BDD233 /* ZLPanGestureRecognizer.m */,
+				86D275321B4486FC00BDD233 /* ZLSwipeableView.h */,
+				86D275331B4486FC00BDD233 /* ZLSwipeableView.m */,
+			);
+			name = ZLSwipeableView;
+			sourceTree = "<group>";
+		};
+		86D275391B448A6A00BDD233 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				86D2753A1B448A9C00BDD233 /* VSCitationView.h */,
+				86D2753B1B448A9C00BDD233 /* VSCitationView.m */,
+			);
+			name = View;
 			sourceTree = "<group>";
 		};
 		BDD1C5CED3CAC4B61BF640ED /* Pods */ = {
@@ -319,10 +350,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				86D2752A1B446A1000BDD233 /* VSHTTPManager.m in Sources */,
+				86D275351B4486FC00BDD233 /* ZLSwipeableView.m in Sources */,
 				86A95B091B434F7D006325B9 /* ViewController.m in Sources */,
 				86A95B061B434F7D006325B9 /* AppDelegate.m in Sources */,
+				86D275381B4487AD00BDD233 /* VSWidgetViewController.m in Sources */,
+				86D275341B4486FC00BDD233 /* ZLPanGestureRecognizer.m in Sources */,
 				86D2752E1B447AFE00BDD233 /* VSCitation.m in Sources */,
-				86D275261B44505600BDD233 /* VSPageContentViewController.m in Sources */,
+				86D2753C1B448A9C00BDD233 /* VSCitationView.m in Sources */,
 				86A95B031B434F7D006325B9 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
