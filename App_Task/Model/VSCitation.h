@@ -10,4 +10,7 @@
 
 @interface VSCitation : NSObject
 
+@property (strong, nonatomic) NSString* citationText;
+@property (strong, nonatomic) NSString* citationAuthor;
+
 @end

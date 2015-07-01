@@ -8,6 +8,10 @@
 
 #import <Foundation/Foundation.h>
 
+@class VSCitation;
+
 @interface VSHTTPManager : NSObject
+
+- (void)getRandomCitationOnSuccess:(void(^)(VSCitation* citation))succeess onFailure:(void(^)(NSError* error))failure;
 
 @end
