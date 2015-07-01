@@ -15,6 +15,7 @@
 		86A95B0E1B434F7D006325B9 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 86A95B0D1B434F7D006325B9 /* Images.xcassets */; };
 		86A95B111B434F7D006325B9 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 86A95B0F1B434F7D006325B9 /* LaunchScreen.xib */; };
 		86A95B1D1B434F7D006325B9 /* App_TaskTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 86A95B1C1B434F7D006325B9 /* App_TaskTests.m */; };
+		86D275261B44505600BDD233 /* VSPageContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 86D275251B44505600BDD233 /* VSPageContentViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +45,8 @@
 		86A95B161B434F7D006325B9 /* App_TaskTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = App_TaskTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		86A95B1B1B434F7D006325B9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		86A95B1C1B434F7D006325B9 /* App_TaskTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = App_TaskTests.m; sourceTree = "<group>"; };
+		86D275241B44505600BDD233 /* VSPageContentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VSPageContentViewController.h; path = Controller/VSPageContentViewController.h; sourceTree = "<group>"; };
+		86D275251B44505600BDD233 /* VSPageContentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VSPageContentViewController.m; path = Controller/VSPageContentViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,11 +99,10 @@
 		86A95AFF1B434F7D006325B9 /* App_Task */ = {
 			isa = PBXGroup;
 			children = (
+				86A95B0A1B434F7D006325B9 /* Main.storyboard */,
+				86D275231B44501500BDD233 /* Controller */,
 				86A95B041B434F7D006325B9 /* AppDelegate.h */,
 				86A95B051B434F7D006325B9 /* AppDelegate.m */,
-				86A95B071B434F7D006325B9 /* ViewController.h */,
-				86A95B081B434F7D006325B9 /* ViewController.m */,
-				86A95B0A1B434F7D006325B9 /* Main.storyboard */,
 				86A95B0D1B434F7D006325B9 /* Images.xcassets */,
 				86A95B0F1B434F7D006325B9 /* LaunchScreen.xib */,
 				86A95B001B434F7D006325B9 /* Supporting Files */,
@@ -132,6 +134,17 @@
 				86A95B1B1B434F7D006325B9 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		86D275231B44501500BDD233 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				86A95B071B434F7D006325B9 /* ViewController.h */,
+				86A95B081B434F7D006325B9 /* ViewController.m */,
+				86D275241B44505600BDD233 /* VSPageContentViewController.h */,
+				86D275251B44505600BDD233 /* VSPageContentViewController.m */,
+			);
+			name = Controller;
 			sourceTree = "<group>";
 		};
 		BDD1C5CED3CAC4B61BF640ED /* Pods */ = {
@@ -189,6 +202,7 @@
 		86A95AF51B434F7D006325B9 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = VS;
 				LastUpgradeCheck = 0630;
 				ORGANIZATIONNAME = "Vlad Stanishevskij";
 				TargetAttributes = {
@@ -280,6 +294,7 @@
 			files = (
 				86A95B091B434F7D006325B9 /* ViewController.m in Sources */,
 				86A95B061B434F7D006325B9 /* AppDelegate.m in Sources */,
+				86D275261B44505600BDD233 /* VSPageContentViewController.m in Sources */,
 				86A95B031B434F7D006325B9 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
