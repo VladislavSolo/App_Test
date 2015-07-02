@@ -9,8 +9,17 @@
 #import "VSWidgetViewController.h"
 #import "ZLSwipeableView.h"
 #import "VSCitationView.h"
+#import "VSHTTPManager.h"
+#import "VSCitation.h"
+
+static NSUInteger fisrtPage = 0;
 
 @interface VSWidgetViewController () <ZLSwipeableViewDataSource, ZLSwipeableViewDelegate, UIActionSheetDelegate>
+
+{
+    VSHTTPManager* httpManager;
+    NSUInteger offset;
+}
 
 @property (weak, nonatomic) IBOutlet ZLSwipeableView *swipeableView;
 
@@ -26,12 +35,12 @@
     [self.swipeableView loadNextSwipeableViewsIfNeeded];
 }
 
-#pragma mark - ZLSwipeableViewDelegate
-
 - (void)viewDidLoad {
     [super viewDidLoad];
     
     self.swipeableView.delegate = self;
+    httpManager = [[VSHTTPManager alloc] init];
+    offset = 0;
 }
 
 - (void)viewDidLayoutSubviews {
@@ -39,25 +48,53 @@
     self.swipeableView.dataSource = self;
 }
 
-- (void)swipeableView:(ZLSwipeableView *)swipeableView didSwipeView:(UIView *)view inDirection:(ZLSwipeableViewDirection)direction {
-    
+-(void)slideToRightWithGestureRecognizer:(UISwipeGestureRecognizer *)gestureRecognizer{
+    [UIView animateWithDuration:0.5 animations:^{
+        
+        NSLog(@"Right");
+        
+    }];
 }
 
-- (void)swipeableView:(ZLSwipeableView *)swipeableView didCancelSwipe:(UIView *)view {
-    
+-(void)slideToLeftWithGestureRecognizer:(UISwipeGestureRecognizer *)gestureRecognizer{
+    [UIView animateWithDuration:0.5 animations:^{
+        
+        NSLog(@"Left");
+        
+    }];
 }
 
-- (void)swipeableView:(ZLSwipeableView *)swipeableView didStartSwipingView:(UIView *)view atLocation:(CGPoint)location {
-    
+#pragma mark - ZLSwipeableViewDelegate
+
+- (void)swipeableView:(ZLSwipeableView *)swipeableView
+         didSwipeView:(UIView *)view
+          inDirection:(ZLSwipeableViewDirection)direction {
+    //NSLog(@"did swipe in direction: %zd", direction);
 }
 
-- (void)swipeableView:(ZLSwipeableView *)swipeableView swipingView:(UIView *)view atLocation:(CGPoint)location translation:(CGPoint)translation {
-    
+- (void)swipeableView:(ZLSwipeableView *)swipeableView
+       didCancelSwipe:(UIView *)view {
+    //NSLog(@"did cancel swipe");
 }
 
-- (void)swipeableView:(ZLSwipeableView *)swipeableView didEndSwipingView:(UIView *)view atLocation:(CGPoint)location {
-    
-    
+- (void)swipeableView:(ZLSwipeableView *)swipeableView
+  didStartSwipingView:(UIView *)view
+           atLocation:(CGPoint)location {
+    //NSLog(@"did start swiping at location: x %f, y %f", location.x, location.y);
+}
+
+- (void)swipeableView:(ZLSwipeableView *)swipeableView
+          swipingView:(UIView *)view
+           atLocation:(CGPoint)location
+          translation:(CGPoint)translation {
+//    NSLog(@"swiping at location: x %f, y %f, translation: x %f, y %f",
+//          location.x, location.y, translation.x, translation.y);
+}
+
+- (void)swipeableView:(ZLSwipeableView *)swipeableView
+    didEndSwipingView:(UIView *)view
+           atLocation:(CGPoint)location {
+    //NSLog(@"did end swiping at location: x %f, y %f", location.x, location.y);
 }
 
 #pragma mark - ZLSwipeableViewDataSource
@@ -66,28 +103,23 @@
     
     VSCitationView* view = [[VSCitationView alloc] initWithFrame:swipeableView.bounds];
     view.backgroundColor = [UIColor blackColor];
-
-    UIView *contentView = [[[NSBundle mainBundle] loadNibNamed:@"CardContentView"
-                                                         owner:self
-                                                       options:nil] objectAtIndex:0];
     
-    contentView.translatesAutoresizingMaskIntoConstraints = NO;
-    [view addSubview:contentView];
-
-    NSDictionary *metrics = @{@"height" : @(view.bounds.size.height),
-                              @"width" : @(view.bounds.size.width)};
+    if (self.pageIndex == fisrtPage) {
+        
+        [httpManager getRandomCitationOnSuccess:^(VSCitation *respCitation) {
     
-    NSDictionary *views = NSDictionaryOfVariableBindings(contentView);
+            [view setCitationText:respCitation.citationText andCitationAuthor:respCitation.citationAuthor];
+            
+        }
+                                      onFailure:^(NSError *error) {
     
-    [view addConstraints: [NSLayoutConstraint constraintsWithVisualFormat:@"H:|[contentView(width)]"
-                                                                  options:0
-                                                                  metrics:metrics
-                                                                    views:views]];
-    
-    [view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat: @"V:|[contentView(height)]"
-                                                                 options:0
-                                                                 metrics:metrics
-                                                                   views:views]];
+                                      }];
+        
+    } else {
+        
+        NSLog(@"%ld", offset);
+        offset++;
+    }
     
     return view;
 }

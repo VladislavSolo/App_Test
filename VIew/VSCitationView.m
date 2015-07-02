@@ -48,4 +48,20 @@
     self.layer.cornerRadius = 10.0;
 }
 
+- (void)setCitationText:(NSString *)citationText andCitationAuthor:(NSString *)citationAuthor {
+    
+    UILabel* citationLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, 10, 240, 180)];
+    citationLabel.lineBreakMode = NSLineBreakByClipping;
+    citationLabel.textColor = [UIColor whiteColor];
+    citationLabel.text = citationText;
+    
+    [self addSubview:citationLabel];
+    
+    UILabel* authorLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, 300, 240, 50)];
+    authorLabel.textColor = [UIColor whiteColor];
+    authorLabel.text = citationAuthor;
+    
+    [self addSubview:authorLabel];
+}
+
 @end

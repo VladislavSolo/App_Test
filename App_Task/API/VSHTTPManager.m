@@ -8,6 +8,7 @@
 
 #import "VSHTTPManager.h"
 #import "VSCitation.h"
+#import "VSPersistencyManager.h"
 #import <AFNetworking/AFHTTPRequestOperationManager.h>
 
 @interface VSHTTPManager ()
@@ -35,7 +36,7 @@
     NSDictionary *params = @{@"method": @"getQuote",
                              @"format": @"json",
                              @"key"   : @"",
-                             @"lang"  : @"en"};
+                             @"lang"  : @"ru"};
     
     [self.requestOperationManager POST:@"getQuote"
                            parameters:params
@@ -44,6 +45,7 @@
                                   VSCitation* citation = [[VSCitation alloc] init];
                                   citation.citationText = [responseObject objectForKey:@"quoteText"];
                                   citation.citationAuthor = [responseObject objectForKey:@"quoteAuthor"];
+                                  citation.citationLink = [responseObject objectForKey:@"quoteLink"];
                                   
                                   if (succeess) {
                                       succeess(citation);

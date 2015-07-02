@@ -10,4 +10,6 @@
 
 @interface VSCitationView : UIView
 
+- (void)setCitationText:(NSString *)citationText andCitationAuthor:(NSString *)citationAuthor;
+
 @end

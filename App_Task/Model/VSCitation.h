@@ -12,5 +12,6 @@
 
 @property (strong, nonatomic) NSString* citationText;
 @property (strong, nonatomic) NSString* citationAuthor;
+@property (strong, nonatomic) NSString* citationLink;
 
 @end

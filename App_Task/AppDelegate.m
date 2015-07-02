@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "VSHTTPManager.h"
+#import "VSCitation.h"
 
 @interface AppDelegate ()
 
@@ -23,6 +24,17 @@
     pageControl.pageIndicatorTintColor = [UIColor lightGrayColor];
     pageControl.currentPageIndicatorTintColor = [UIColor blackColor];
     pageControl.backgroundColor = [UIColor whiteColor];
+
+//    VSHTTPManager* httpManager = [[VSHTTPManager alloc] init];
+//    
+//            [httpManager getRandomCitationOnSuccess:^(VSCitation *respCitation) {
+//        
+//                NSLog(@"%@ --- %@", respCitation.citationText, respCitation.citationAuthor);
+//            }
+//                                          onFailure:^(NSError *error) {
+//    
+//                                              NSLog(@"@", [error localizedDescription]);
+//                                          }];
 
     return YES;
 }
