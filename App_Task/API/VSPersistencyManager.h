@@ -19,7 +19,9 @@
 @property (readonly, strong, nonatomic) NSPersistentStoreCoordinator *persistentStoreCoordinator;
 
 + (VSPersistencyManager *)sharedManager;
-- (void)setCitationURLToData:(NSString *)url;
+- (void)setCitationToData:(VSCitation *)citation;
 - (VSCitation *)getCitationFromDataWithOffset:(NSUInteger)offset;
+- (BOOL)isCitationInBlackList:(VSCitation *)citation;
+- (void)setCitationToBlackList:(VSCitation *)citation;
 
 @end

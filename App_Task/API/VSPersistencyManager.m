@@ -25,15 +25,29 @@
 
 #pragma mark - Set to Data
 
-- (void)setCitationURLToData:(NSString *)url {
+- (void)setCitationToData:(VSCitation *)citation {
     
     VSCitationData* citationData = [NSEntityDescription insertNewObjectForEntityForName:@"VSCitationData"
                                                                  inManagedObjectContext:self.managedObjectContext];
     
-    citationData.citationURL = url;
+    citationData.citationText = citation.citationText;
+    citationData.citationAuthor = citation.citationAuthor;
+    citationData.citationURL = citation.citationLink;
     
     [self saveContext];
 }
+
+- (void)setCitationToBlackList:(VSCitation *)citation {
+    
+    VSCitationData* citationData = [NSEntityDescription insertNewObjectForEntityForName:@"VSCitationBlackList"
+                                                                 inManagedObjectContext:self.managedObjectContext];
+    
+    citationData.citationURL = citation.citationLink;
+    
+    [self saveContext];
+}
+
+#pragma mark - Get from Data
 
 - (VSCitation *)getCitationFromDataWithOffset:(NSUInteger)offset {
     
@@ -65,6 +79,32 @@
         }
         return citation;
     }    
+}
+
+- (BOOL)isCitationInBlackList:(VSCitation *)citation {
+    
+    NSFetchRequest* fetchRequest = [[NSFetchRequest alloc] init];
+    NSEntityDescription *description = [NSEntityDescription entityForName:@"VSCitationBlackList"
+                                                   inManagedObjectContext:self.managedObjectContext];
+    
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"citationURL = %@", citation.citationLink];
+    
+    [fetchRequest setPredicate:predicate];
+    [fetchRequest setEntity:description];
+    
+    NSError* requestError = nil;
+    NSArray* resultArray = [self.managedObjectContext executeFetchRequest:fetchRequest error:&requestError];
+    
+    if (requestError) {
+        
+        NSLog(@"%@", [requestError localizedDescription]);
+        
+        return nil;
+    } else if ([resultArray count] > 0) {
+        return YES;
+    } else {
+        return NO;
+    }
 }
 
 #pragma mark - Core Data Stack

@@ -9,7 +9,7 @@
 #import "ZLSwipeableView.h"
 #import "ZLPanGestureRecognizer.h"
 
-const NSUInteger ZLPrefetchedViewsNumber = 3;
+const NSUInteger ZLPrefetchedViewsNumber = 1;
 
 ZLSwipeableViewDirection
 ZLDirectionVectorToSwipeableViewDirection(CGVector directionVector) {

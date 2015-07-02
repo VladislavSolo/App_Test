@@ -19,23 +19,6 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
-    
-    UIPageControl* pageControl = [UIPageControl appearance];
-    pageControl.pageIndicatorTintColor = [UIColor lightGrayColor];
-    pageControl.currentPageIndicatorTintColor = [UIColor blackColor];
-    pageControl.backgroundColor = [UIColor whiteColor];
-
-//    VSHTTPManager* httpManager = [[VSHTTPManager alloc] init];
-//    
-//            [httpManager getRandomCitationOnSuccess:^(VSCitation *respCitation) {
-//        
-//                NSLog(@"%@ --- %@", respCitation.citationText, respCitation.citationAuthor);
-//            }
-//                                          onFailure:^(NSError *error) {
-//    
-//                                              NSLog(@"@", [error localizedDescription]);
-//                                          }];
-
     return YES;
 }
 

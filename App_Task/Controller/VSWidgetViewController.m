@@ -10,9 +10,11 @@
 #import "ZLSwipeableView.h"
 #import "VSCitationView.h"
 #import "VSHTTPManager.h"
+#import "VSPersistencyManager.h"
 #import "VSCitation.h"
 
-static NSUInteger fisrtPage = 0;
+static NSUInteger firstPage = 0;
+static NSUInteger secondPage = 1;
 
 @interface VSWidgetViewController () <ZLSwipeableViewDataSource, ZLSwipeableViewDelegate, UIActionSheetDelegate>
 
@@ -22,24 +24,37 @@ static NSUInteger fisrtPage = 0;
 }
 
 @property (weak, nonatomic) IBOutlet ZLSwipeableView *swipeableView;
+@property (strong, nonatomic) VSCitation* citation;
 
 @end
 
 @implementation VSWidgetViewController
-
-#pragma mark - UIActionSheetDelegate
-
-- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
-    
-    [self.swipeableView discardAllSwipeableViews];
-    [self.swipeableView loadNextSwipeableViewsIfNeeded];
-}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
     self.swipeableView.delegate = self;
     httpManager = [[VSHTTPManager alloc] init];
+    self.citation = [[VSCitation alloc] init];
+    offset = 0;
+    
+    if (self.pageIndex == secondPage) {
+    
+    UIButton* button = [[UIButton alloc] initWithFrame:CGRectMake(self.swipeableView.bounds.size.width/2 - 50,
+                                                                  self.swipeableView.bounds.size.height + 180, 180, 50)];
+    [button setTitle:@"Начать показ заново" forState:UIControlStateNormal];
+    [button setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    [button setTintColor:[UIColor blueColor]];
+    button.backgroundColor = [UIColor blackColor];
+    [self.view addSubview:button];
+    [button addTarget:self action:@selector(showCitationAgain:) forControlEvents:UIControlEventTouchUpInside];
+    
+    }
+    
+}
+
+- (void)showCitationAgain:(UIButton *)sender {
+    
     offset = 0;
 }
 
@@ -48,53 +63,52 @@ static NSUInteger fisrtPage = 0;
     self.swipeableView.dataSource = self;
 }
 
--(void)slideToRightWithGestureRecognizer:(UISwipeGestureRecognizer *)gestureRecognizer{
-    [UIView animateWithDuration:0.5 animations:^{
-        
-        NSLog(@"Right");
-        
-    }];
-}
-
--(void)slideToLeftWithGestureRecognizer:(UISwipeGestureRecognizer *)gestureRecognizer{
-    [UIView animateWithDuration:0.5 animations:^{
-        
-        NSLog(@"Left");
-        
-    }];
-}
-
 #pragma mark - ZLSwipeableViewDelegate
 
 - (void)swipeableView:(ZLSwipeableView *)swipeableView
-         didSwipeView:(UIView *)view
-          inDirection:(ZLSwipeableViewDirection)direction {
-    //NSLog(@"did swipe in direction: %zd", direction);
-}
-
-- (void)swipeableView:(ZLSwipeableView *)swipeableView
        didCancelSwipe:(UIView *)view {
-    //NSLog(@"did cancel swipe");
+
 }
 
 - (void)swipeableView:(ZLSwipeableView *)swipeableView
   didStartSwipingView:(UIView *)view
            atLocation:(CGPoint)location {
-    //NSLog(@"did start swiping at location: x %f, y %f", location.x, location.y);
+
 }
 
 - (void)swipeableView:(ZLSwipeableView *)swipeableView
           swipingView:(UIView *)view
            atLocation:(CGPoint)location
           translation:(CGPoint)translation {
-//    NSLog(@"swiping at location: x %f, y %f, translation: x %f, y %f",
-//          location.x, location.y, translation.x, translation.y);
+
 }
 
 - (void)swipeableView:(ZLSwipeableView *)swipeableView
     didEndSwipingView:(UIView *)view
            atLocation:(CGPoint)location {
-    //NSLog(@"did end swiping at location: x %f, y %f", location.x, location.y);
+
+}
+
+- (void)swipeableView:(ZLSwipeableView *)swipeableView
+         didSwipeView:(UIView *)view
+          inDirection:(ZLSwipeableViewDirection)direction {
+    
+    switch (direction) {
+        case 1:
+            
+            if (self.pageIndex == firstPage) {
+                [[VSPersistencyManager sharedManager] setCitationToBlackList:self.citation];
+            }
+            break;
+        case 2:
+            
+            if (self.pageIndex == firstPage) {
+                [[VSPersistencyManager sharedManager] setCitationToData:self.citation];
+            }
+            break;
+        default:
+            break;
+    }
 }
 
 #pragma mark - ZLSwipeableViewDataSource
@@ -104,24 +118,32 @@ static NSUInteger fisrtPage = 0;
     VSCitationView* view = [[VSCitationView alloc] initWithFrame:swipeableView.bounds];
     view.backgroundColor = [UIColor blackColor];
     
-    if (self.pageIndex == fisrtPage) {
+    __weak typeof(self) weakSelf = self;
+    
+    if (self.pageIndex == firstPage) {
         
         [httpManager getRandomCitationOnSuccess:^(VSCitation *respCitation) {
     
             [view setCitationText:respCitation.citationText andCitationAuthor:respCitation.citationAuthor];
             
+            weakSelf.citation = respCitation;
         }
                                       onFailure:^(NSError *error) {
     
                                       }];
-        
+        return view;
     } else {
         
-        NSLog(@"%ld", offset);
+        VSCitation* citation = [[VSPersistencyManager sharedManager] getCitationFromDataWithOffset:offset];
+
+        [view setCitationText:citation.citationText andCitationAuthor:citation.citationAuthor];
         offset++;
+        
+        NSLog(@"%ld", offset);
+        
+        return view;
     }
-    
-    return view;
+    return nil;
 }
 
 @end

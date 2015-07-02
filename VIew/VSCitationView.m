@@ -38,7 +38,8 @@
 }
 
 - (void)setup {
-    
+    self.layer.borderWidth = 2;
+    self.layer.borderColor = [[UIColor lightGrayColor] CGColor] ;
     self.layer.shadowColor = [UIColor blackColor].CGColor;
     self.layer.shadowOpacity = 0.33;
     self.layer.shadowOffset = CGSizeMake(0, 1.5);

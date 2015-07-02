@@ -15,6 +15,7 @@
 		86A95B0E1B434F7D006325B9 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 86A95B0D1B434F7D006325B9 /* Images.xcassets */; };
 		86A95B111B434F7D006325B9 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 86A95B0F1B434F7D006325B9 /* LaunchScreen.xib */; };
 		86A95B1D1B434F7D006325B9 /* App_TaskTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 86A95B1C1B434F7D006325B9 /* App_TaskTests.m */; };
+		86CBDA7C1B45BF7B00882F21 /* VSCitationBlackList.m in Sources */ = {isa = PBXBuildFile; fileRef = 86CBDA7B1B45BF7B00882F21 /* VSCitationBlackList.m */; };
 		86D2752A1B446A1000BDD233 /* VSHTTPManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 86D275291B446A1000BDD233 /* VSHTTPManager.m */; };
 		86D2752E1B447AFE00BDD233 /* VSCitation.m in Sources */ = {isa = PBXBuildFile; fileRef = 86D2752D1B447AFE00BDD233 /* VSCitation.m */; };
 		86D275341B4486FC00BDD233 /* ZLPanGestureRecognizer.m in Sources */ = {isa = PBXBuildFile; fileRef = 86D275311B4486FC00BDD233 /* ZLPanGestureRecognizer.m */; };
@@ -54,6 +55,8 @@
 		86A95B161B434F7D006325B9 /* App_TaskTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = App_TaskTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		86A95B1B1B434F7D006325B9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		86A95B1C1B434F7D006325B9 /* App_TaskTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = App_TaskTests.m; sourceTree = "<group>"; };
+		86CBDA7A1B45BF7B00882F21 /* VSCitationBlackList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VSCitationBlackList.h; path = Data/VSCitationBlackList.h; sourceTree = "<group>"; };
+		86CBDA7B1B45BF7B00882F21 /* VSCitationBlackList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VSCitationBlackList.m; path = Data/VSCitationBlackList.m; sourceTree = "<group>"; };
 		86D275291B446A1000BDD233 /* VSHTTPManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VSHTTPManager.m; path = API/VSHTTPManager.m; sourceTree = "<group>"; };
 		86D2752C1B447AFE00BDD233 /* VSCitation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VSCitation.h; path = Model/VSCitation.h; sourceTree = "<group>"; };
 		86D2752D1B447AFE00BDD233 /* VSCitation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VSCitation.m; path = Model/VSCitation.m; sourceTree = "<group>"; };
@@ -225,6 +228,8 @@
 				86D77E9C1B45477C00A20E90 /* Model.xcdatamodeld */,
 				86D77EA31B454C7D00A20E90 /* VSCitationData.h */,
 				86D77EA41B454C7D00A20E90 /* VSCitationData.m */,
+				86CBDA7A1B45BF7B00882F21 /* VSCitationBlackList.h */,
+				86CBDA7B1B45BF7B00882F21 /* VSCitationBlackList.m */,
 			);
 			name = DATA;
 			sourceTree = "<group>";
@@ -382,6 +387,7 @@
 				86D77EA51B454C7D00A20E90 /* VSCitationData.m in Sources */,
 				86D275341B4486FC00BDD233 /* ZLPanGestureRecognizer.m in Sources */,
 				86D2752E1B447AFE00BDD233 /* VSCitation.m in Sources */,
+				86CBDA7C1B45BF7B00882F21 /* VSCitationBlackList.m in Sources */,
 				86D77E9E1B45477C00A20E90 /* Model.xcdatamodeld in Sources */,
 				86D77EA11B45491600A20E90 /* VSPersistencyManager.m in Sources */,
 				86D2753C1B448A9C00BDD233 /* VSCitationView.m in Sources */,
@@ -513,6 +519,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = App_Task/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -524,6 +531,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = App_Task/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
