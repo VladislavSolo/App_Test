@@ -13,6 +13,7 @@
 		865744B41B469D81007F2469 /* face_h.png in Resources */ = {isa = PBXBuildFile; fileRef = 865744B31B469D81007F2469 /* face_h.png */; };
 		865744B61B469E34007F2469 /* twitter_h.png in Resources */ = {isa = PBXBuildFile; fileRef = 865744B51B469E34007F2469 /* twitter_h.png */; };
 		867A0B931B483E7F001B9794 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 867A0B921B483E7F001B9794 /* SystemConfiguration.framework */; };
+		867A0B971B485418001B9794 /* RKDropdownAlert.m in Sources */ = {isa = PBXBuildFile; fileRef = 867A0B961B485418001B9794 /* RKDropdownAlert.m */; };
 		86A95B031B434F7D006325B9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 86A95B021B434F7D006325B9 /* main.m */; };
 		86A95B061B434F7D006325B9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 86A95B051B434F7D006325B9 /* AppDelegate.m */; };
 		86A95B091B434F7D006325B9 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 86A95B081B434F7D006325B9 /* ViewController.m */; };
@@ -52,6 +53,8 @@
 		865744B31B469D81007F2469 /* face_h.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = face_h.png; sourceTree = "<group>"; };
 		865744B51B469E34007F2469 /* twitter_h.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = twitter_h.png; sourceTree = "<group>"; };
 		867A0B921B483E7F001B9794 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		867A0B951B485418001B9794 /* RKDropdownAlert.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RKDropdownAlert.h; sourceTree = "<group>"; };
+		867A0B961B485418001B9794 /* RKDropdownAlert.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RKDropdownAlert.m; sourceTree = "<group>"; };
 		86A95AFD1B434F7D006325B9 /* App_Task.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = App_Task.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		86A95B011B434F7D006325B9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		86A95B021B434F7D006325B9 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -118,6 +121,15 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		867A0B941B485405001B9794 /* RKDropdownAlert */ = {
+			isa = PBXGroup;
+			children = (
+				867A0B951B485418001B9794 /* RKDropdownAlert.h */,
+				867A0B961B485418001B9794 /* RKDropdownAlert.m */,
+			);
+			path = RKDropdownAlert;
+			sourceTree = "<group>";
+		};
 		86A95AF41B434F7D006325B9 = {
 			isa = PBXGroup;
 			children = (
@@ -147,12 +159,13 @@
 				86D275231B44501500BDD233 /* Controller */,
 				86D275391B448A6A00BDD233 /* View */,
 				86D77EA21B454B5F00A20E90 /* DATA */,
+				86D2752F1B4486C100BDD233 /* ZLSwipeableView */,
+				867A0B941B485405001B9794 /* RKDropdownAlert */,
+				86A95B001B434F7D006325B9 /* Supporting Files */,
 				86A95B041B434F7D006325B9 /* AppDelegate.h */,
 				86A95B051B434F7D006325B9 /* AppDelegate.m */,
 				86A95B0D1B434F7D006325B9 /* Images.xcassets */,
 				86A95B0F1B434F7D006325B9 /* LaunchScreen.xib */,
-				86D2752F1B4486C100BDD233 /* ZLSwipeableView */,
-				86A95B001B434F7D006325B9 /* Supporting Files */,
 				865744AF1B469C08007F2469 /* face.png */,
 				865744B31B469D81007F2469 /* face_h.png */,
 				865744B01B469C08007F2469 /* twitter.png */,
@@ -411,6 +424,7 @@
 				86D77E9E1B45477C00A20E90 /* Model.xcdatamodeld in Sources */,
 				86D77EA11B45491600A20E90 /* VSPersistencyManager.m in Sources */,
 				86D2753C1B448A9C00BDD233 /* VSCitationView.m in Sources */,
+				867A0B971B485418001B9794 /* RKDropdownAlert.m in Sources */,
 				86A95B031B434F7D006325B9 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

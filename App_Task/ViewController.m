@@ -31,8 +31,9 @@
     
     self.pageViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"PageViewController"];
     self.pageViewController.dataSource = self;
-        
+    
     VSWidgetViewController* startingViewController = [self viewControllerAtIndex:(!isNetwork)];
+
     NSArray* viewControllers = @[startingViewController];
     
     [self.pageViewController setViewControllers:viewControllers

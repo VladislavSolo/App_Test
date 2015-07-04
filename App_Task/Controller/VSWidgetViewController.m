@@ -13,6 +13,7 @@
 #import "VSPersistencyManager.h"
 #import "VSCitation.h"
 #import <Social/Social.h>
+#import "RKDropdownAlert.h"
 
 static NSUInteger firstPage = 0;
 static NSUInteger secondPage = 1;
@@ -64,11 +65,14 @@ NSString* const VSCitationDidChangeNotification = @"VSCitationDidChangeNotificat
                                              selector:@selector(citationNotification:)
                                                  name:VSCitationDidChangeNotification
                                                object:nil];
-    
+    if (![httpManager isNetwork]) {
+        [RKDropdownAlert title:@"No internet connection" backgroundColor:[UIColor whiteColor] textColor:[UIColor blackColor] time:3.0];
+    }
+
 }
 
 - (void)viewDidLayoutSubviews {
-    
+
     self.swipeableView.dataSource = self;
 }
 
