@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		586B0A04E2FB16D009CC6D4C /* libPods-App_Task.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C5BED579F79B0CF269555B5 /* libPods-App_Task.a */; };
+		865744B11B469C08007F2469 /* face.png in Resources */ = {isa = PBXBuildFile; fileRef = 865744AF1B469C08007F2469 /* face.png */; };
+		865744B21B469C08007F2469 /* twitter.png in Resources */ = {isa = PBXBuildFile; fileRef = 865744B01B469C08007F2469 /* twitter.png */; };
+		865744B41B469D81007F2469 /* face_h.png in Resources */ = {isa = PBXBuildFile; fileRef = 865744B31B469D81007F2469 /* face_h.png */; };
+		865744B61B469E34007F2469 /* twitter_h.png in Resources */ = {isa = PBXBuildFile; fileRef = 865744B51B469E34007F2469 /* twitter_h.png */; };
+		867A0B931B483E7F001B9794 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 867A0B921B483E7F001B9794 /* SystemConfiguration.framework */; };
 		86A95B031B434F7D006325B9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 86A95B021B434F7D006325B9 /* main.m */; };
 		86A95B061B434F7D006325B9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 86A95B051B434F7D006325B9 /* AppDelegate.m */; };
 		86A95B091B434F7D006325B9 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 86A95B081B434F7D006325B9 /* ViewController.m */; };
@@ -42,6 +47,11 @@
 		0444BCECFB954A7A7D01275B /* Pods-App_Task.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-App_Task.debug.xcconfig"; path = "Pods/Target Support Files/Pods-App_Task/Pods-App_Task.debug.xcconfig"; sourceTree = "<group>"; };
 		3C5BED579F79B0CF269555B5 /* libPods-App_Task.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-App_Task.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5276A3705464AF16E5B73292 /* Pods-App_Task.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-App_Task.release.xcconfig"; path = "Pods/Target Support Files/Pods-App_Task/Pods-App_Task.release.xcconfig"; sourceTree = "<group>"; };
+		865744AF1B469C08007F2469 /* face.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = face.png; sourceTree = "<group>"; };
+		865744B01B469C08007F2469 /* twitter.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = twitter.png; sourceTree = "<group>"; };
+		865744B31B469D81007F2469 /* face_h.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = face_h.png; sourceTree = "<group>"; };
+		865744B51B469E34007F2469 /* twitter_h.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = twitter_h.png; sourceTree = "<group>"; };
+		867A0B921B483E7F001B9794 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		86A95AFD1B434F7D006325B9 /* App_Task.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = App_Task.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		86A95B011B434F7D006325B9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		86A95B021B434F7D006325B9 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -82,6 +92,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				867A0B931B483E7F001B9794 /* SystemConfiguration.framework in Frameworks */,
 				86D77EA71B454F3400A20E90 /* CoreData.framework in Frameworks */,
 				586B0A04E2FB16D009CC6D4C /* libPods-App_Task.a in Frameworks */,
 			);
@@ -100,6 +111,7 @@
 		0571C08D037D2C9667AFEBD4 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				867A0B921B483E7F001B9794 /* SystemConfiguration.framework */,
 				86D77EA61B454F3400A20E90 /* CoreData.framework */,
 				3C5BED579F79B0CF269555B5 /* libPods-App_Task.a */,
 			);
@@ -141,6 +153,10 @@
 				86A95B0F1B434F7D006325B9 /* LaunchScreen.xib */,
 				86D2752F1B4486C100BDD233 /* ZLSwipeableView */,
 				86A95B001B434F7D006325B9 /* Supporting Files */,
+				865744AF1B469C08007F2469 /* face.png */,
+				865744B31B469D81007F2469 /* face_h.png */,
+				865744B01B469C08007F2469 /* twitter.png */,
+				865744B51B469E34007F2469 /* twitter_h.png */,
 			);
 			path = App_Task;
 			sourceTree = "<group>";
@@ -327,7 +343,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				86A95B0C1B434F7D006325B9 /* Main.storyboard in Resources */,
+				865744B41B469D81007F2469 /* face_h.png in Resources */,
 				86A95B111B434F7D006325B9 /* LaunchScreen.xib in Resources */,
+				865744B21B469C08007F2469 /* twitter.png in Resources */,
+				865744B11B469C08007F2469 /* face.png in Resources */,
+				865744B61B469E34007F2469 /* twitter_h.png in Resources */,
 				86A95B0E1B434F7D006325B9 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

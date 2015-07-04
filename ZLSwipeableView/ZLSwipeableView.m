@@ -9,7 +9,7 @@
 #import "ZLSwipeableView.h"
 #import "ZLPanGestureRecognizer.h"
 
-const NSUInteger ZLPrefetchedViewsNumber = 1;
+const NSUInteger ZLPrefetchedViewsNumber = 2;
 
 ZLSwipeableViewDirection
 ZLDirectionVectorToSwipeableViewDirection(CGVector directionVector) {
@@ -33,6 +33,8 @@ ZLDirectionVectorToSwipeableViewDirection(CGVector directionVector) {
 
 @interface ZLSwipeableView () <UICollisionBehaviorDelegate,
                                UIDynamicAnimatorDelegate>
+
+
 
 // UIDynamicAnimators
 @property (strong, nonatomic) UIDynamicAnimator *animator;
@@ -72,6 +74,7 @@ ZLDirectionVectorToSwipeableViewDirection(CGVector directionVector) {
 }
 
 - (void)setup {
+
     self.animator = [[UIDynamicAnimator alloc] initWithReferenceView:self];
     self.animator.delegate = self;
     self.anchorContainerView =
@@ -580,7 +583,7 @@ int signum(CGFloat n) { return (n < 0) ? -1 : (n > 0) ? +1 : 0; }
                      }];
 }
 
-- (UIView *)topSwipeableView {
+- (VSCitationView *)topSwipeableView {
     return self.containerView.subviews.lastObject;
 }
 

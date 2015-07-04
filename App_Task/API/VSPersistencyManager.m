@@ -27,14 +27,29 @@
 
 - (void)setCitationToData:(VSCitation *)citation {
     
-    VSCitationData* citationData = [NSEntityDescription insertNewObjectForEntityForName:@"VSCitationData"
-                                                                 inManagedObjectContext:self.managedObjectContext];
+    NSFetchRequest* fetchRequest = [[NSFetchRequest alloc] init];
+    NSEntityDescription *description = [NSEntityDescription entityForName:@"VSCitationData"
+                                                   inManagedObjectContext:self.managedObjectContext];
     
-    citationData.citationText = citation.citationText;
-    citationData.citationAuthor = citation.citationAuthor;
-    citationData.citationURL = citation.citationLink;
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"citationURL = %@", citation.citationLink];
     
-    [self saveContext];
+    [fetchRequest setPredicate:predicate];
+    [fetchRequest setEntity:description];
+    
+    NSError* requestError = nil;
+    NSArray* resultArray = [self.managedObjectContext executeFetchRequest:fetchRequest error:&requestError];
+    
+    if ([resultArray count] == 0 && citation != nil) {
+        
+        VSCitationData* citationData = [NSEntityDescription insertNewObjectForEntityForName:@"VSCitationData"
+                                                                     inManagedObjectContext:self.managedObjectContext];
+        
+        citationData.citationText = citation.citationText;
+        citationData.citationAuthor = citation.citationAuthor;
+        citationData.citationURL = citation.citationLink;
+        
+        [self saveContext];
+    }
 }
 
 - (void)setCitationToBlackList:(VSCitation *)citation {

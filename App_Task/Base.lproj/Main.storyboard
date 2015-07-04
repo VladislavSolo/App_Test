@@ -21,7 +21,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="367" y="337"/>
+            <point key="canvasLocation" x="366.5" y="336.5"/>
         </scene>
         <!--Widget View Controller-->
         <scene sceneID="7gR-KL-sLy">
@@ -35,8 +35,46 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wTp-Pw-ctT">
+                                <rect key="frame" x="299" y="597" width="60" height="60"/>
+                                <state key="normal" image="twitter.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted" image="twitter_h.png"/>
+                                <connections>
+                                    <action selector="actionTwitterShare:" destination="Jvj-UW-9wj" eventType="touchUpInside" id="K1G-or-TOW"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ihX-0C-1qR">
+                                <rect key="frame" x="16" y="597" width="60" height="60"/>
+                                <state key="normal" image="face.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted" image="face_h.png"/>
+                                <connections>
+                                    <action selector="actionFacebookShare:" destination="Jvj-UW-9wj" eventType="touchUpInside" id="KUJ-5I-Swu"/>
+                                </connections>
+                            </button>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BwW-Gh-MRZ">
+                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                                <color key="barTintColor" red="0.1215686275" green="0.12941176469999999" blue="0.14117647059999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <textAttributes key="titleTextAttributes">
+                                    <color key="textColor" red="0.99607849120000003" green="0.99607849120000003" blue="0.99215692280000001" alpha="1" colorSpace="deviceRGB"/>
+                                </textAttributes>
+                                <items>
+                                    <navigationItem title="Title" id="i3s-G5-ba6"/>
+                                </items>
+                            </navigationBar>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="79n-Bw-72q" customClass="ZLSwipeableView">
                                 <rect key="frame" x="56" y="76" width="262" height="380"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nof-mW-wGC">
+                                        <rect key="frame" x="110" y="8" width="136" height="45"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
@@ -54,11 +92,18 @@
         <scene sceneID="tMq-vH-k7f">
             <objects>
                 <pageViewController storyboardIdentifier="PageViewController" autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="1bI-CR-0k0" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="fZL-4I-GvU"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                 </pageViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lGs-CX-a0c" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="366.5" y="1062.5"/>
+            <point key="canvasLocation" x="366.5" y="1146.5"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="face.png" width="60" height="60"/>
+        <image name="face_h.png" width="60" height="60"/>
+        <image name="twitter.png" width="60" height="60"/>
+        <image name="twitter_h.png" width="60" height="60"/>
+    </resources>
 </document>

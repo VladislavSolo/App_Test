@@ -13,5 +13,6 @@
 @interface VSHTTPManager : NSObject
 
 - (void)getRandomCitationOnSuccess:(void(^)(VSCitation* citation))succeess onFailure:(void(^)(NSError* error))failure;
+- (BOOL)isNetwork;
 
 @end

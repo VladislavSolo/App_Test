@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
+@class VSCitationView;
+
 typedef NS_ENUM(NSUInteger, ZLSwipeableViewDirection) {
     ZLSwipeableViewDirectionNone = 0,
     ZLSwipeableViewDirectionLeft = (1 << 0),
@@ -54,7 +56,6 @@ typedef NS_ENUM(NSUInteger, ZLSwipeableViewDirection) {
 
 @required
 - (UIView *)nextViewForSwipeableView:(ZLSwipeableView *)swipeableView;
-
 @end
 
 @interface ZLSwipeableView : UIView
@@ -99,7 +100,7 @@ typedef NS_ENUM(NSUInteger, ZLSwipeableViewDirection) {
 @property (nonatomic) CGFloat programaticSwipeRotationRelativeYOffsetFromCenter;
 
 /// The currently displayed top most view.
-@property (nonatomic, readonly) UIView *topSwipeableView;
+@property (nonatomic, readonly) VSCitationView *topSwipeableView;
 
 /// Discard all swipeable views on the screen.
 - (void)discardAllSwipeableViews;

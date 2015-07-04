@@ -12,9 +12,12 @@
 #import "VSHTTPManager.h"
 #import "VSPersistencyManager.h"
 #import "VSCitation.h"
+#import <Social/Social.h>
 
 static NSUInteger firstPage = 0;
 static NSUInteger secondPage = 1;
+
+NSString* const VSCitationDidChangeNotification = @"VSCitationDidChangeNotification";
 
 @interface VSWidgetViewController () <ZLSwipeableViewDataSource, ZLSwipeableViewDelegate, UIActionSheetDelegate>
 
@@ -26,6 +29,9 @@ static NSUInteger secondPage = 1;
 @property (weak, nonatomic) IBOutlet ZLSwipeableView *swipeableView;
 @property (strong, nonatomic) VSCitation* citation;
 
+- (IBAction)actionFacebookShare:(UIButton *)sender;
+- (IBAction)actionTwitterShare:(UIButton *)sender;
+
 @end
 
 @implementation VSWidgetViewController
@@ -33,34 +39,100 @@ static NSUInteger secondPage = 1;
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    offset = 0;
+    
     self.swipeableView.delegate = self;
     httpManager = [[VSHTTPManager alloc] init];
     self.citation = [[VSCitation alloc] init];
-    offset = 0;
+    
+    [self getCitationFromServer];
     
     if (self.pageIndex == secondPage) {
     
-    UIButton* button = [[UIButton alloc] initWithFrame:CGRectMake(self.swipeableView.bounds.size.width/2 - 50,
-                                                                  self.swipeableView.bounds.size.height + 180, 180, 50)];
-    [button setTitle:@"Начать показ заново" forState:UIControlStateNormal];
-    [button setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-    [button setTintColor:[UIColor blueColor]];
-    button.backgroundColor = [UIColor blackColor];
-    [self.view addSubview:button];
-    [button addTarget:self action:@selector(showCitationAgain:) forControlEvents:UIControlEventTouchUpInside];
+        UIButton* button = [[UIButton alloc] initWithFrame:CGRectMake(self.swipeableView.bounds.size.width/2 - 50,
+                                                                      self.swipeableView.bounds.size.height + 150, 180, 50)];
+        [button setTitle:@"Начать показ заново" forState:UIControlStateNormal];
+        [button setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+        [button setTintColor:[UIColor blueColor]];
+        button.backgroundColor = [UIColor blackColor];
+        [self.view addSubview:button];
+        [button addTarget:self action:@selector(showCitationAgain:) forControlEvents:UIControlEventTouchUpInside];
     
     }
     
-}
-
-- (void)showCitationAgain:(UIButton *)sender {
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(citationNotification:)
+                                                 name:VSCitationDidChangeNotification
+                                               object:nil];
     
-    offset = 0;
 }
 
 - (void)viewDidLayoutSubviews {
     
     self.swipeableView.dataSource = self;
+}
+
+- (void) dealloc {
+    
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
+
+- (void)setCitation:(VSCitation *)citation {
+    
+    _citation = citation;
+    
+    NSDictionary* dictionary = [NSDictionary dictionaryWithObject:citation forKey:VSCitationDidChangeNotification];
+    
+    [[NSNotificationCenter defaultCenter] postNotificationName:VSCitationDidChangeNotification
+                                                        object:nil
+                                                      userInfo:dictionary];
+}
+
+#pragma mark Action
+
+- (void)showCitationAgain:(UIButton *)sender {
+    
+    offset = 0;
+    [self.swipeableView discardAllSwipeableViews];
+    [self.swipeableView loadNextSwipeableViewsIfNeeded];
+}
+
+- (void)actionFacebookShare:(UIButton *)sender {
+    
+    SLComposeViewController *controller = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeFacebook];
+    if ([self.citation.citationAuthor isEqual:@""]) {
+        
+        [controller setInitialText:[NSString stringWithFormat:@"%@\nvia @forismatic\n", self.citation.citationText]];
+    } else {
+        
+        [controller setInitialText:[NSString stringWithFormat:@"%@\n\n%@.", self.citation.citationText, self.citation.citationAuthor]];
+    }
+    [controller addURL:[NSURL URLWithString:self.citation.citationLink]];
+    [self presentViewController:controller animated:YES completion:Nil];
+}
+
+- (IBAction)actionTwitterShare:(UIButton *)sender {
+    
+    SLComposeViewController *controller = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeTwitter];
+    
+    if ([self.citation.citationAuthor isEqual:@""]) {
+        
+        [controller setInitialText:[NSString stringWithFormat:@"%@\n", self.citation.citationText]];
+    } else {
+        
+        [controller setInitialText:[NSString stringWithFormat:@"%@\n\n%@.\nvia @forismatic\n",
+                                    self.citation.citationText, self.citation.citationAuthor]];
+    }
+    [controller addURL:[NSURL URLWithString:self.citation.citationLink]];
+    [self presentViewController:controller animated:YES completion:Nil];
+}
+
+- (void)citationNotification:(NSNotification*) notification {
+    
+
+    if (self.pageIndex == firstPage) {
+        [[self.swipeableView topSwipeableView] setCitationText:self.citation.citationText andCitationAuthor:self.citation.citationAuthor];
+    }
 }
 
 #pragma mark - ZLSwipeableViewDelegate
@@ -92,7 +164,8 @@ static NSUInteger secondPage = 1;
 - (void)swipeableView:(ZLSwipeableView *)swipeableView
          didSwipeView:(UIView *)view
           inDirection:(ZLSwipeableViewDirection)direction {
-    
+    [self getCitationFromServer];
+
     switch (direction) {
         case 1:
             
@@ -115,35 +188,49 @@ static NSUInteger secondPage = 1;
 
 - (UIView *)nextViewForSwipeableView:(ZLSwipeableView *)swipeableView {
     
-    VSCitationView* view = [[VSCitationView alloc] initWithFrame:swipeableView.bounds];
+    VSCitationView* view = [[VSCitationView alloc] initWithFrame:self.swipeableView.bounds];
     view.backgroundColor = [UIColor blackColor];
-    
-    __weak typeof(self) weakSelf = self;
-    
+
     if (self.pageIndex == firstPage) {
         
-        [httpManager getRandomCitationOnSuccess:^(VSCitation *respCitation) {
-    
-            [view setCitationText:respCitation.citationText andCitationAuthor:respCitation.citationAuthor];
-            
-            weakSelf.citation = respCitation;
-        }
-                                      onFailure:^(NSError *error) {
-    
-                                      }];
         return view;
     } else {
         
         VSCitation* citation = [[VSPersistencyManager sharedManager] getCitationFromDataWithOffset:offset];
-
+        
         [view setCitationText:citation.citationText andCitationAuthor:citation.citationAuthor];
         offset++;
-        
-        NSLog(@"%ld", offset);
         
         return view;
     }
     return nil;
+}
+
+#pragma mark - HTTP Manager
+
+- (BOOL)getAndCheckCitation {
+    
+    __weak typeof(self) weakSelf = self;
+    
+    [httpManager getRandomCitationOnSuccess:^(VSCitation *respCitation) {
+
+        weakSelf.citation = respCitation;
+    }
+                                  onFailure:^(NSError *error) {
+                                      
+                                  }];
+    if (self.citation == nil) {
+        return NO;
+    }
+    return YES;
+}
+
+- (void) getCitationFromServer {
+    
+    if (![self getAndCheckCitation]) {
+        
+        [self getCitationFromServer];
+    }
 }
 
 @end

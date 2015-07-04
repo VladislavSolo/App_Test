@@ -8,10 +8,13 @@
 
 #import "ViewController.h"
 #import "VSWidgetViewController.h"
-
-static NSUInteger secondPage = 1;
+#import "VSHTTPManager.h"
 
 @interface ViewController () <UIPageViewControllerDataSource>
+
+{
+    BOOL isNetwork;
+}
 
 @end
 
@@ -20,20 +23,24 @@ static NSUInteger secondPage = 1;
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    VSHTTPManager* httpManager = [[VSHTTPManager alloc] init];
+    
+    isNetwork = [httpManager isNetwork];
+    
     _pageTitles = @[@"first", @"second"];
     
     self.pageViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"PageViewController"];
     self.pageViewController.dataSource = self;
-    
-    VSWidgetViewController* startingViewController = [self viewControllerAtIndex:0];
+        
+    VSWidgetViewController* startingViewController = [self viewControllerAtIndex:(!isNetwork)];
     NSArray* viewControllers = @[startingViewController];
     
     [self.pageViewController setViewControllers:viewControllers
-                                      direction:UIPageViewControllerNavigationDirectionReverse
+                                      direction:UIPageViewControllerNavigationDirectionForward
                                        animated:YES
                                      completion:nil];
     
-    self.pageViewController.view.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height);
+    self.pageViewController.view.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height + 50);
     
     [self addChildViewController:self.pageViewController];
     [self.view addSubview:self.pageViewController.view];
@@ -88,6 +95,7 @@ static NSUInteger secondPage = 1;
     }
     
     VSWidgetViewController* pageContentViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"PageContentViewController"];
+    
     pageContentViewController.pageIndex = index;
 
     return pageContentViewController;
@@ -100,7 +108,11 @@ static NSUInteger secondPage = 1;
 
 - (NSInteger)presentationIndexForPageViewController:(UIPageViewController *)pageViewController {
     
-    return 0;
+    if (!isNetwork) {
+        return 0;
+    }
+    return 1;
+    
 }
 
 @end

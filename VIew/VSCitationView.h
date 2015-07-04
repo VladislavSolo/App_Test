@@ -10,6 +10,9 @@
 
 @interface VSCitationView : UIView
 
+@property (strong, nonatomic) NSString* citationAuthor;
+@property (strong, nonatomic) NSString* citationText;
+
 - (void)setCitationText:(NSString *)citationText andCitationAuthor:(NSString *)citationAuthor;
 
 @end

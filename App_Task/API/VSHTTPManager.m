@@ -10,6 +10,7 @@
 #import "VSCitation.h"
 #import "VSPersistencyManager.h"
 #import <AFNetworking/AFHTTPRequestOperationManager.h>
+#import <SystemConfiguration/SystemConfiguration.h>
 
 @interface VSHTTPManager ()
 
@@ -38,7 +39,7 @@
                              @"key"   : @"",
                              @"lang"  : @"ru"};
     
-    [self.requestOperationManager POST:@"getQuote"
+    [self.requestOperationManager GET:@"getQuote"
                            parameters:params
                               success:^(AFHTTPRequestOperation *operation, id responseObject) {
                                   
@@ -47,7 +48,7 @@
                                   citation.citationAuthor = [responseObject objectForKey:@"quoteAuthor"];
                                   citation.citationLink = [responseObject objectForKey:@"quoteLink"];
                                   
-                                  if (succeess) {
+                                  if (![[VSPersistencyManager sharedManager] isCitationInBlackList:citation] && succeess) {
                                       succeess(citation);
                                   }
                               }
@@ -55,6 +56,17 @@
                               
                                   NSLog(@"Error: %@", error);
                               }];
+}
+
+- (BOOL)isNetwork {
+    
+    NSURL *scriptUrl = [NSURL URLWithString:@"http://google.com"];
+    NSData *data = [NSData dataWithContentsOfURL:scriptUrl];
+    if (data)
+        return YES;
+    else
+        return NO;
+    
 }
 
 @end
