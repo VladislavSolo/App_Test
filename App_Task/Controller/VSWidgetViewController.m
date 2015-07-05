@@ -38,7 +38,6 @@ NSString* const VSCitationDidChangeNotification = @"VSCitationDidChangeNotificat
     [super viewDidLoad];
     
     offset = 0;
-    
     self.swipeableView.delegate = self;
     httpManager = [[VSHTTPManager alloc] init];
     self.citation = [[VSCitation alloc] init];
@@ -52,7 +51,10 @@ NSString* const VSCitationDidChangeNotification = @"VSCitationDidChangeNotificat
     [self setNavigationBar];
     
     if (![httpManager isNetwork]) {
-        [RKDropdownAlert title:@"Нет подключения к интернету" backgroundColor:[UIColor whiteColor] textColor:[UIColor blackColor] time:3.0];
+        [RKDropdownAlert title:@"Нет подключения к интернету"
+               backgroundColor:[UIColor whiteColor]
+                     textColor:[UIColor blackColor]
+                          time:3.0];
     }
 
 }
@@ -80,7 +82,7 @@ NSString* const VSCitationDidChangeNotification = @"VSCitationDidChangeNotificat
         
         UIButton *facebookButton = [[UIButton alloc] initWithFrame:facebookFrame];
         [facebookButton setBackgroundImage:imageFacebook forState:UIControlStateNormal];
-        [facebookButton addTarget:self action:@selector(actionFacebookShare:) forControlEvents:UIControlEventTouchUpInside];
+        [facebookButton addTarget:self action:@selector(actionTwitterShare:) forControlEvents:UIControlEventTouchUpInside];
         [facebookButton setShowsTouchWhenHighlighted:YES];
         [self.view addSubview:facebookButton];
         
@@ -89,7 +91,7 @@ NSString* const VSCitationDidChangeNotification = @"VSCitationDidChangeNotificat
         
         UIButton *twitterButton = [[UIButton alloc] initWithFrame:twitterFrame];
         [twitterButton setBackgroundImage:imageTwitter forState:UIControlStateNormal];
-        [twitterButton addTarget:self action:@selector(actionTwitterShare:) forControlEvents:UIControlEventTouchUpInside];
+        [twitterButton addTarget:self action:@selector(actionFacebookShare:) forControlEvents:UIControlEventTouchUpInside];
         [twitterButton setShowsTouchWhenHighlighted:YES];
         [self.view addSubview:twitterButton];
         
@@ -117,7 +119,6 @@ NSString* const VSCitationDidChangeNotification = @"VSCitationDidChangeNotificat
     _citation = citation;
     
     NSDictionary* dictionary = [NSDictionary dictionaryWithObject:citation forKey:VSCitationDidChangeNotification];
-    
     [[NSNotificationCenter defaultCenter] postNotificationName:VSCitationDidChangeNotification
                                                         object:nil
                                                       userInfo:dictionary];
@@ -134,32 +135,52 @@ NSString* const VSCitationDidChangeNotification = @"VSCitationDidChangeNotificat
 
 - (void)actionFacebookShare:(UIButton *)sender {
     
-    SLComposeViewController *controller = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeFacebook];
-    if ([self.citation.citationAuthor isEqual:@""]) {
+    if (self.citation.citationText == nil) {
         
-        [controller setInitialText:[NSString stringWithFormat:@"%@\nvia @forismatic\n", self.citation.citationText]];
+        [RKDropdownAlert title:@"Нет подключения к интернету"
+               backgroundColor:[UIColor whiteColor]
+                     textColor:[UIColor blackColor]
+                          time:3.0];
+        
     } else {
-        
-        [controller setInitialText:[NSString stringWithFormat:@"%@\n\n%@.", self.citation.citationText, self.citation.citationAuthor]];
+    
+        SLComposeViewController *controller = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeFacebook];
+        if ([self.citation.citationAuthor isEqual:@""]) {
+            
+            [controller setInitialText:[NSString stringWithFormat:@"%@\n", self.citation.citationText]];
+        } else {
+            
+            [controller setInitialText:[NSString stringWithFormat:@"%@\n\n%@.", self.citation.citationText, self.citation.citationAuthor]];
+        }
+        [controller addURL:[NSURL URLWithString:self.citation.citationLink]];
+        [self presentViewController:controller animated:YES completion:Nil];
     }
-    [controller addURL:[NSURL URLWithString:self.citation.citationLink]];
-    [self presentViewController:controller animated:YES completion:Nil];
 }
 
 - (void)actionTwitterShare:(UIButton *)sender {
     
-    SLComposeViewController *controller = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeTwitter];
-    
-    if ([self.citation.citationAuthor isEqual:@""]) {
+    if (self.citation.citationText == nil) {
         
-        [controller setInitialText:[NSString stringWithFormat:@"%@\n", self.citation.citationText]];
+        [RKDropdownAlert title:@"Нет подключения к интернету"
+               backgroundColor:[UIColor whiteColor]
+                     textColor:[UIColor blackColor]
+                          time:3.0];
+        
     } else {
         
-        [controller setInitialText:[NSString stringWithFormat:@"%@\n\n%@.\nvia @forismatic\n",
-                                    self.citation.citationText, self.citation.citationAuthor]];
+        SLComposeViewController *controller = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeTwitter];
+
+        if ([self.citation.citationAuthor isEqual:@""]) {
+            
+            [controller setInitialText:[NSString stringWithFormat:@"%@\nvia @forismatic\n", self.citation.citationText]];
+        } else {
+            
+            [controller setInitialText:[NSString stringWithFormat:@"%@\n\n%@.\nvia @forismatic\n",
+                                        self.citation.citationText, self.citation.citationAuthor]];
+        }
+        [controller addURL:[NSURL URLWithString:self.citation.citationLink]];
+        [self presentViewController:controller animated:YES completion:Nil];
     }
-    [controller addURL:[NSURL URLWithString:self.citation.citationLink]];
-    [self presentViewController:controller animated:YES completion:Nil];
 }
 
 - (void)citationNotification:(NSNotification*) notification {
@@ -229,7 +250,7 @@ NSString* const VSCitationDidChangeNotification = @"VSCitationDidChangeNotificat
 #pragma mark - ZLSwipeableViewDataSource
 
 - (UIView *)nextViewForSwipeableView:(ZLSwipeableView *)swipeableView {
-    
+
     if (self.pageIndex == firstPage) {
         
         VSCitationFirstView* view = [[VSCitationFirstView alloc] initWithFrame:self.swipeableView.bounds];
