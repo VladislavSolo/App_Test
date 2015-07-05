@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="7549" systemVersion="14D136" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="VSCitationBlackList" representedClassName="VSCitationBlackList" syncable="YES">
+        <attribute name="citationURL" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="VSCitationData" representedClassName="VSCitationData" syncable="YES">
+        <attribute name="citationAuthor" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="citationText" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="citationURL" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="VSCitationData" positionX="-4761" positionY="-2727" width="128" height="88"/>
+        <element name="VSCitationBlackList" positionX="-4599" positionY="-2781" width="128" height="58"/>
+    </elements>
+</model>
