@@ -113,8 +113,7 @@
     if (requestError) {
         
         NSLog(@"%@", [requestError localizedDescription]);
-        
-        return nil;
+        return NO;
     } else if ([resultArray count] > 0) {
         return YES;
     } else {

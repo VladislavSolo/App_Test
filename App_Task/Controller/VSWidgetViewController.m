@@ -17,7 +17,6 @@
 #import "RKDropdownAlert.h"
 
 static NSUInteger firstPage = 0;
-static NSUInteger secondPage = 1;
 
 NSString* const VSCitationDidChangeNotification = @"VSCitationDidChangeNotification";
 
