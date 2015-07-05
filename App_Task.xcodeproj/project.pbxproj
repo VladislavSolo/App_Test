@@ -12,6 +12,7 @@
 		863C3B601B4956EB008C5E93 /* reverse.png in Resources */ = {isa = PBXBuildFile; fileRef = 863C3B5F1B4956EB008C5E93 /* reverse.png */; };
 		863C3B631B495E12008C5E93 /* delete.png in Resources */ = {isa = PBXBuildFile; fileRef = 863C3B621B495E12008C5E93 /* delete.png */; };
 		863C3B661B4961D9008C5E93 /* VSCitationSecondView.m in Sources */ = {isa = PBXBuildFile; fileRef = 863C3B651B4961D9008C5E93 /* VSCitationSecondView.m */; };
+		865738E31B49ACFB00AA7E67 /* Diagram.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 865738E21B49ACFB00AA7E67 /* Diagram.pdf */; };
 		867A0B971B485418001B9794 /* RKDropdownAlert.m in Sources */ = {isa = PBXBuildFile; fileRef = 867A0B961B485418001B9794 /* RKDropdownAlert.m */; };
 		867A0B9B1B4868F4001B9794 /* favourite.png in Resources */ = {isa = PBXBuildFile; fileRef = 867A0B9A1B4868F4001B9794 /* favourite.png */; };
 		867A0B9D1B486C96001B9794 /* list.png in Resources */ = {isa = PBXBuildFile; fileRef = 867A0B9C1B486C96001B9794 /* list.png */; };
@@ -55,6 +56,7 @@
 		863C3B621B495E12008C5E93 /* delete.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = delete.png; sourceTree = "<group>"; };
 		863C3B641B4961D9008C5E93 /* VSCitationSecondView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VSCitationSecondView.h; path = VIew/VSCitationSecondView.h; sourceTree = SOURCE_ROOT; };
 		863C3B651B4961D9008C5E93 /* VSCitationSecondView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VSCitationSecondView.m; path = VIew/VSCitationSecondView.m; sourceTree = SOURCE_ROOT; };
+		865738E21B49ACFB00AA7E67 /* Diagram.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = Diagram.pdf; path = ../../../../Desktop/Diagram.pdf; sourceTree = "<group>"; };
 		867A0B921B483E7F001B9794 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		867A0B951B485418001B9794 /* RKDropdownAlert.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RKDropdownAlert.h; sourceTree = "<group>"; };
 		867A0B961B485418001B9794 /* RKDropdownAlert.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RKDropdownAlert.m; sourceTree = "<group>"; };
@@ -185,6 +187,7 @@
 				86A95B051B434F7D006325B9 /* AppDelegate.m */,
 				86A95B0D1B434F7D006325B9 /* Images.xcassets */,
 				86A95B0F1B434F7D006325B9 /* LaunchScreen.xib */,
+				865738E21B49ACFB00AA7E67 /* Diagram.pdf */,
 			);
 			path = App_Task;
 			sourceTree = "<group>";
@@ -380,6 +383,7 @@
 				863C3B5E1B4952B9008C5E93 /* facebook.png in Resources */,
 				86A95B111B434F7D006325B9 /* LaunchScreen.xib in Resources */,
 				867A0B9B1B4868F4001B9794 /* favourite.png in Resources */,
+				865738E31B49ACFB00AA7E67 /* Diagram.pdf in Resources */,
 				86A95B0E1B434F7D006325B9 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
