@@ -8,7 +8,8 @@
 
 #import "VSWidgetViewController.h"
 #import "ZLSwipeableView.h"
-#import "VSCitationView.h"
+#import "VSCitationFirstView.h"
+#import "VSCitationSecondView.h"
 #import "VSHTTPManager.h"
 #import "VSPersistencyManager.h"
 #import "VSCitation.h"
@@ -30,9 +31,6 @@ NSString* const VSCitationDidChangeNotification = @"VSCitationDidChangeNotificat
 @property (weak, nonatomic) IBOutlet ZLSwipeableView *swipeableView;
 @property (strong, nonatomic) VSCitation* citation;
 
-- (IBAction)actionFacebookShare:(UIButton *)sender;
-- (IBAction)actionTwitterShare:(UIButton *)sender;
-
 @end
 
 @implementation VSWidgetViewController
@@ -48,25 +46,14 @@ NSString* const VSCitationDidChangeNotification = @"VSCitationDidChangeNotificat
     
     [self getCitationFromServer];
     
-    if (self.pageIndex == secondPage) {
-    
-        UIButton* button = [[UIButton alloc] initWithFrame:CGRectMake(self.swipeableView.bounds.size.width/2 - 50,
-                                                                      self.swipeableView.bounds.size.height + 150, 180, 50)];
-        [button setTitle:@"Начать показ заново" forState:UIControlStateNormal];
-        [button setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-        [button setTintColor:[UIColor blueColor]];
-        button.backgroundColor = [UIColor blackColor];
-        [self.view addSubview:button];
-        [button addTarget:self action:@selector(showCitationAgain:) forControlEvents:UIControlEventTouchUpInside];
-    
-    }
-    
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(citationNotification:)
                                                  name:VSCitationDidChangeNotification
                                                object:nil];
+    [self setNavigationBar];
+    
     if (![httpManager isNetwork]) {
-        [RKDropdownAlert title:@"No internet connection" backgroundColor:[UIColor whiteColor] textColor:[UIColor blackColor] time:3.0];
+        [RKDropdownAlert title:@"Нет подключения к интернету" backgroundColor:[UIColor whiteColor] textColor:[UIColor blackColor] time:3.0];
     }
 
 }
@@ -81,6 +68,51 @@ NSString* const VSCitationDidChangeNotification = @"VSCitationDidChangeNotificat
     [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
+- (void)setNavigationBar {
+
+    if (self.pageIndex == firstPage) {
+        
+        UIImageView* favouriteView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"list.png"]];
+        favouriteView.frame = CGRectMake(self.view.frame.size.width/2 - 20, 15, 40, 40);
+        [self.view addSubview:favouriteView];
+        
+        UIImage* imageFacebook = [UIImage imageNamed:@"twitter.png"];
+        CGRect facebookFrame = CGRectMake(self.swipeableView.frame.origin.x, 5*self.swipeableView.frame.size.height/4 + 10, 50, 40);
+        
+        UIButton *facebookButton = [[UIButton alloc] initWithFrame:facebookFrame];
+        [facebookButton setBackgroundImage:imageFacebook forState:UIControlStateNormal];
+        [facebookButton addTarget:self action:@selector(actionFacebookShare:) forControlEvents:UIControlEventTouchUpInside];
+        [facebookButton setShowsTouchWhenHighlighted:YES];
+        [self.view addSubview:facebookButton];
+        
+        UIImage* imageTwitter = [UIImage imageNamed:@"facebook.png"];
+        CGRect twitterFrame = CGRectMake(self.swipeableView.frame.size.width - 10, 5*self.swipeableView.frame.size.height/4, 60, 60);
+        
+        UIButton *twitterButton = [[UIButton alloc] initWithFrame:twitterFrame];
+        [twitterButton setBackgroundImage:imageTwitter forState:UIControlStateNormal];
+        [twitterButton addTarget:self action:@selector(actionTwitterShare:) forControlEvents:UIControlEventTouchUpInside];
+        [twitterButton setShowsTouchWhenHighlighted:YES];
+        [self.view addSubview:twitterButton];
+        
+    } else {
+        
+        UIImageView* favouriteView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"favourite.png"]];
+        favouriteView.frame = CGRectMake(self.view.frame.size.width/2 - 22, 11, 44, 44);
+        [self.view addSubview:favouriteView];
+
+        UIImage* reverseImage = [UIImage imageNamed:@"reverse.png"];
+        CGRect reverseFrame = CGRectMake(self.view.frame.size.width/2 - 30, 5*self.swipeableView.frame.size.height/4, 60, 60);
+        
+        UIButton* button = [[UIButton alloc] initWithFrame:reverseFrame];
+        button.backgroundColor = [UIColor blackColor];
+        [button setBackgroundImage:reverseImage forState:UIControlStateNormal];
+        [button setShowsTouchWhenHighlighted:YES];
+        [button addTarget:self action:@selector(actionShowCitationAgain:) forControlEvents:UIControlEventTouchUpInside];
+        
+        [self.view addSubview:button];
+    }
+}
+
 - (void)setCitation:(VSCitation *)citation {
     
     _citation = citation;
@@ -92,9 +124,9 @@ NSString* const VSCitationDidChangeNotification = @"VSCitationDidChangeNotificat
                                                       userInfo:dictionary];
 }
 
-#pragma mark Action
+#pragma mark - Actions
 
-- (void)showCitationAgain:(UIButton *)sender {
+- (void)actionShowCitationAgain:(UIButton *)sender {
     
     offset = 0;
     [self.swipeableView discardAllSwipeableViews];
@@ -115,7 +147,7 @@ NSString* const VSCitationDidChangeNotification = @"VSCitationDidChangeNotificat
     [self presentViewController:controller animated:YES completion:Nil];
 }
 
-- (IBAction)actionTwitterShare:(UIButton *)sender {
+- (void)actionTwitterShare:(UIButton *)sender {
     
     SLComposeViewController *controller = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeTwitter];
     
@@ -133,10 +165,17 @@ NSString* const VSCitationDidChangeNotification = @"VSCitationDidChangeNotificat
 
 - (void)citationNotification:(NSNotification*) notification {
     
-
     if (self.pageIndex == firstPage) {
         [[self.swipeableView topSwipeableView] setCitationText:self.citation.citationText andCitationAuthor:self.citation.citationAuthor];
     }
+}
+
+- (void)actionSwipeRight {
+    [self.swipeableView swipeTopViewToRight];
+}
+
+- (void)actionSwipeLeft {
+    [self.swipeableView swipeTopViewToLeft];
 }
 
 #pragma mark - ZLSwipeableViewDelegate
@@ -192,13 +231,16 @@ NSString* const VSCitationDidChangeNotification = @"VSCitationDidChangeNotificat
 
 - (UIView *)nextViewForSwipeableView:(ZLSwipeableView *)swipeableView {
     
-    VSCitationView* view = [[VSCitationView alloc] initWithFrame:self.swipeableView.bounds];
-    view.backgroundColor = [UIColor blackColor];
-
     if (self.pageIndex == firstPage) {
         
+        VSCitationFirstView* view = [[VSCitationFirstView alloc] initWithFrame:self.swipeableView.bounds];
+        view.backgroundColor = [UIColor blackColor];
+        [view.favouriteButton addTarget:self action:@selector(actionSwipeRight) forControlEvents:UIControlEventTouchUpInside];
+        [view.deleteButton addTarget:self action:@selector(actionSwipeLeft) forControlEvents:UIControlEventTouchUpInside];
         return view;
     } else {
+        
+        VSCitationSecondView* view = [[VSCitationSecondView alloc] initWithFrame:self.swipeableView.bounds];
         
         VSCitation* citation = [[VSPersistencyManager sharedManager] getCitationFromDataWithOffset:offset];
         
@@ -233,8 +275,9 @@ NSString* const VSCitationDidChangeNotification = @"VSCitationDidChangeNotificat
     
     if (![self getAndCheckCitation]) {
         
-        [self getCitationFromServer];
+        [self getAndCheckCitation];
     }
+
 }
 
 @end

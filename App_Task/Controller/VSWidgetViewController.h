@@ -8,8 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
+@class VSCitation;
+
 @interface VSWidgetViewController : UIViewController
 
 @property (assign, nonatomic) NSUInteger pageIndex;
-
 @end

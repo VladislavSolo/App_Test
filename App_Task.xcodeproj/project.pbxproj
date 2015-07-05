@@ -8,12 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		586B0A04E2FB16D009CC6D4C /* libPods-App_Task.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C5BED579F79B0CF269555B5 /* libPods-App_Task.a */; };
-		865744B11B469C08007F2469 /* face.png in Resources */ = {isa = PBXBuildFile; fileRef = 865744AF1B469C08007F2469 /* face.png */; };
-		865744B21B469C08007F2469 /* twitter.png in Resources */ = {isa = PBXBuildFile; fileRef = 865744B01B469C08007F2469 /* twitter.png */; };
-		865744B41B469D81007F2469 /* face_h.png in Resources */ = {isa = PBXBuildFile; fileRef = 865744B31B469D81007F2469 /* face_h.png */; };
-		865744B61B469E34007F2469 /* twitter_h.png in Resources */ = {isa = PBXBuildFile; fileRef = 865744B51B469E34007F2469 /* twitter_h.png */; };
-		867A0B931B483E7F001B9794 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 867A0B921B483E7F001B9794 /* SystemConfiguration.framework */; };
+		863C3B5E1B4952B9008C5E93 /* facebook.png in Resources */ = {isa = PBXBuildFile; fileRef = 863C3B5D1B4952B9008C5E93 /* facebook.png */; };
+		863C3B601B4956EB008C5E93 /* reverse.png in Resources */ = {isa = PBXBuildFile; fileRef = 863C3B5F1B4956EB008C5E93 /* reverse.png */; };
+		863C3B631B495E12008C5E93 /* delete.png in Resources */ = {isa = PBXBuildFile; fileRef = 863C3B621B495E12008C5E93 /* delete.png */; };
+		863C3B661B4961D9008C5E93 /* VSCitationSecondView.m in Sources */ = {isa = PBXBuildFile; fileRef = 863C3B651B4961D9008C5E93 /* VSCitationSecondView.m */; };
 		867A0B971B485418001B9794 /* RKDropdownAlert.m in Sources */ = {isa = PBXBuildFile; fileRef = 867A0B961B485418001B9794 /* RKDropdownAlert.m */; };
+		867A0B9B1B4868F4001B9794 /* favourite.png in Resources */ = {isa = PBXBuildFile; fileRef = 867A0B9A1B4868F4001B9794 /* favourite.png */; };
+		867A0B9D1B486C96001B9794 /* list.png in Resources */ = {isa = PBXBuildFile; fileRef = 867A0B9C1B486C96001B9794 /* list.png */; };
 		86A95B031B434F7D006325B9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 86A95B021B434F7D006325B9 /* main.m */; };
 		86A95B061B434F7D006325B9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 86A95B051B434F7D006325B9 /* AppDelegate.m */; };
 		86A95B091B434F7D006325B9 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 86A95B081B434F7D006325B9 /* ViewController.m */; };
@@ -21,13 +22,14 @@
 		86A95B0E1B434F7D006325B9 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 86A95B0D1B434F7D006325B9 /* Images.xcassets */; };
 		86A95B111B434F7D006325B9 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 86A95B0F1B434F7D006325B9 /* LaunchScreen.xib */; };
 		86A95B1D1B434F7D006325B9 /* App_TaskTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 86A95B1C1B434F7D006325B9 /* App_TaskTests.m */; };
+		86C963E61B4880FC0083F1A4 /* twitter.png in Resources */ = {isa = PBXBuildFile; fileRef = 86C963E51B4880FC0083F1A4 /* twitter.png */; };
 		86CBDA7C1B45BF7B00882F21 /* VSCitationBlackList.m in Sources */ = {isa = PBXBuildFile; fileRef = 86CBDA7B1B45BF7B00882F21 /* VSCitationBlackList.m */; };
 		86D2752A1B446A1000BDD233 /* VSHTTPManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 86D275291B446A1000BDD233 /* VSHTTPManager.m */; };
 		86D2752E1B447AFE00BDD233 /* VSCitation.m in Sources */ = {isa = PBXBuildFile; fileRef = 86D2752D1B447AFE00BDD233 /* VSCitation.m */; };
 		86D275341B4486FC00BDD233 /* ZLPanGestureRecognizer.m in Sources */ = {isa = PBXBuildFile; fileRef = 86D275311B4486FC00BDD233 /* ZLPanGestureRecognizer.m */; };
 		86D275351B4486FC00BDD233 /* ZLSwipeableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 86D275331B4486FC00BDD233 /* ZLSwipeableView.m */; };
 		86D275381B4487AD00BDD233 /* VSWidgetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 86D275371B4487AD00BDD233 /* VSWidgetViewController.m */; };
-		86D2753C1B448A9C00BDD233 /* VSCitationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 86D2753B1B448A9C00BDD233 /* VSCitationView.m */; };
+		86D2753C1B448A9C00BDD233 /* VSCitationFirstView.m in Sources */ = {isa = PBXBuildFile; fileRef = 86D2753B1B448A9C00BDD233 /* VSCitationFirstView.m */; };
 		86D77E9E1B45477C00A20E90 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 86D77E9C1B45477C00A20E90 /* Model.xcdatamodeld */; };
 		86D77EA11B45491600A20E90 /* VSPersistencyManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 86D77EA01B45491600A20E90 /* VSPersistencyManager.m */; };
 		86D77EA51B454C7D00A20E90 /* VSCitationData.m in Sources */ = {isa = PBXBuildFile; fileRef = 86D77EA41B454C7D00A20E90 /* VSCitationData.m */; };
@@ -48,13 +50,16 @@
 		0444BCECFB954A7A7D01275B /* Pods-App_Task.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-App_Task.debug.xcconfig"; path = "Pods/Target Support Files/Pods-App_Task/Pods-App_Task.debug.xcconfig"; sourceTree = "<group>"; };
 		3C5BED579F79B0CF269555B5 /* libPods-App_Task.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-App_Task.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5276A3705464AF16E5B73292 /* Pods-App_Task.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-App_Task.release.xcconfig"; path = "Pods/Target Support Files/Pods-App_Task/Pods-App_Task.release.xcconfig"; sourceTree = "<group>"; };
-		865744AF1B469C08007F2469 /* face.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = face.png; sourceTree = "<group>"; };
-		865744B01B469C08007F2469 /* twitter.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = twitter.png; sourceTree = "<group>"; };
-		865744B31B469D81007F2469 /* face_h.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = face_h.png; sourceTree = "<group>"; };
-		865744B51B469E34007F2469 /* twitter_h.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = twitter_h.png; sourceTree = "<group>"; };
+		863C3B5D1B4952B9008C5E93 /* facebook.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = facebook.png; sourceTree = "<group>"; };
+		863C3B5F1B4956EB008C5E93 /* reverse.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = reverse.png; sourceTree = "<group>"; };
+		863C3B621B495E12008C5E93 /* delete.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = delete.png; sourceTree = "<group>"; };
+		863C3B641B4961D9008C5E93 /* VSCitationSecondView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VSCitationSecondView.h; path = VIew/VSCitationSecondView.h; sourceTree = SOURCE_ROOT; };
+		863C3B651B4961D9008C5E93 /* VSCitationSecondView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VSCitationSecondView.m; path = VIew/VSCitationSecondView.m; sourceTree = SOURCE_ROOT; };
 		867A0B921B483E7F001B9794 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		867A0B951B485418001B9794 /* RKDropdownAlert.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RKDropdownAlert.h; sourceTree = "<group>"; };
 		867A0B961B485418001B9794 /* RKDropdownAlert.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RKDropdownAlert.m; sourceTree = "<group>"; };
+		867A0B9A1B4868F4001B9794 /* favourite.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = favourite.png; sourceTree = "<group>"; };
+		867A0B9C1B486C96001B9794 /* list.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = list.png; sourceTree = "<group>"; };
 		86A95AFD1B434F7D006325B9 /* App_Task.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = App_Task.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		86A95B011B434F7D006325B9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		86A95B021B434F7D006325B9 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -68,6 +73,7 @@
 		86A95B161B434F7D006325B9 /* App_TaskTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = App_TaskTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		86A95B1B1B434F7D006325B9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		86A95B1C1B434F7D006325B9 /* App_TaskTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = App_TaskTests.m; sourceTree = "<group>"; };
+		86C963E51B4880FC0083F1A4 /* twitter.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = twitter.png; sourceTree = "<group>"; };
 		86CBDA7A1B45BF7B00882F21 /* VSCitationBlackList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VSCitationBlackList.h; path = Data/VSCitationBlackList.h; sourceTree = "<group>"; };
 		86CBDA7B1B45BF7B00882F21 /* VSCitationBlackList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VSCitationBlackList.m; path = Data/VSCitationBlackList.m; sourceTree = "<group>"; };
 		86D275291B446A1000BDD233 /* VSHTTPManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VSHTTPManager.m; path = API/VSHTTPManager.m; sourceTree = "<group>"; };
@@ -79,8 +85,8 @@
 		86D275331B4486FC00BDD233 /* ZLSwipeableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ZLSwipeableView.m; path = ZLSwipeableView/ZLSwipeableView.m; sourceTree = SOURCE_ROOT; };
 		86D275361B4487AD00BDD233 /* VSWidgetViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VSWidgetViewController.h; path = Controller/VSWidgetViewController.h; sourceTree = "<group>"; };
 		86D275371B4487AD00BDD233 /* VSWidgetViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VSWidgetViewController.m; path = Controller/VSWidgetViewController.m; sourceTree = "<group>"; };
-		86D2753A1B448A9C00BDD233 /* VSCitationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VSCitationView.h; path = VIew/VSCitationView.h; sourceTree = SOURCE_ROOT; };
-		86D2753B1B448A9C00BDD233 /* VSCitationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VSCitationView.m; path = VIew/VSCitationView.m; sourceTree = SOURCE_ROOT; };
+		86D2753A1B448A9C00BDD233 /* VSCitationFirstView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VSCitationFirstView.h; path = VIew/VSCitationFirstView.h; sourceTree = SOURCE_ROOT; };
+		86D2753B1B448A9C00BDD233 /* VSCitationFirstView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VSCitationFirstView.m; path = VIew/VSCitationFirstView.m; sourceTree = SOURCE_ROOT; };
 		86D275431B449A6A00BDD233 /* VSHTTPManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VSHTTPManager.h; path = API/VSHTTPManager.h; sourceTree = "<group>"; };
 		86D77E9D1B45477C00A20E90 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		86D77E9F1B45491600A20E90 /* VSPersistencyManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VSPersistencyManager.h; path = API/VSPersistencyManager.h; sourceTree = "<group>"; };
@@ -95,7 +101,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				867A0B931B483E7F001B9794 /* SystemConfiguration.framework in Frameworks */,
 				86D77EA71B454F3400A20E90 /* CoreData.framework in Frameworks */,
 				586B0A04E2FB16D009CC6D4C /* libPods-App_Task.a in Frameworks */,
 			);
@@ -119,6 +124,19 @@
 				3C5BED579F79B0CF269555B5 /* libPods-App_Task.a */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		863C3B611B4956F0008C5E93 /* icons */ = {
+			isa = PBXGroup;
+			children = (
+				863C3B621B495E12008C5E93 /* delete.png */,
+				863C3B5F1B4956EB008C5E93 /* reverse.png */,
+				863C3B5D1B4952B9008C5E93 /* facebook.png */,
+				86C963E51B4880FC0083F1A4 /* twitter.png */,
+				867A0B9A1B4868F4001B9794 /* favourite.png */,
+				867A0B9C1B486C96001B9794 /* list.png */,
+			);
+			name = icons;
 			sourceTree = "<group>";
 		};
 		867A0B941B485405001B9794 /* RKDropdownAlert */ = {
@@ -162,14 +180,11 @@
 				86D2752F1B4486C100BDD233 /* ZLSwipeableView */,
 				867A0B941B485405001B9794 /* RKDropdownAlert */,
 				86A95B001B434F7D006325B9 /* Supporting Files */,
+				863C3B611B4956F0008C5E93 /* icons */,
 				86A95B041B434F7D006325B9 /* AppDelegate.h */,
 				86A95B051B434F7D006325B9 /* AppDelegate.m */,
 				86A95B0D1B434F7D006325B9 /* Images.xcassets */,
 				86A95B0F1B434F7D006325B9 /* LaunchScreen.xib */,
-				865744AF1B469C08007F2469 /* face.png */,
-				865744B31B469D81007F2469 /* face_h.png */,
-				865744B01B469C08007F2469 /* twitter.png */,
-				865744B51B469E34007F2469 /* twitter_h.png */,
 			);
 			path = App_Task;
 			sourceTree = "<group>";
@@ -245,8 +260,10 @@
 		86D275391B448A6A00BDD233 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				86D2753A1B448A9C00BDD233 /* VSCitationView.h */,
-				86D2753B1B448A9C00BDD233 /* VSCitationView.m */,
+				86D2753A1B448A9C00BDD233 /* VSCitationFirstView.h */,
+				86D2753B1B448A9C00BDD233 /* VSCitationFirstView.m */,
+				863C3B641B4961D9008C5E93 /* VSCitationSecondView.h */,
+				863C3B651B4961D9008C5E93 /* VSCitationSecondView.m */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -355,12 +372,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				86C963E61B4880FC0083F1A4 /* twitter.png in Resources */,
 				86A95B0C1B434F7D006325B9 /* Main.storyboard in Resources */,
-				865744B41B469D81007F2469 /* face_h.png in Resources */,
+				863C3B601B4956EB008C5E93 /* reverse.png in Resources */,
+				863C3B631B495E12008C5E93 /* delete.png in Resources */,
+				867A0B9D1B486C96001B9794 /* list.png in Resources */,
+				863C3B5E1B4952B9008C5E93 /* facebook.png in Resources */,
 				86A95B111B434F7D006325B9 /* LaunchScreen.xib in Resources */,
-				865744B21B469C08007F2469 /* twitter.png in Resources */,
-				865744B11B469C08007F2469 /* face.png in Resources */,
-				865744B61B469E34007F2469 /* twitter_h.png in Resources */,
+				867A0B9B1B4868F4001B9794 /* favourite.png in Resources */,
 				86A95B0E1B434F7D006325B9 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -423,7 +442,8 @@
 				86CBDA7C1B45BF7B00882F21 /* VSCitationBlackList.m in Sources */,
 				86D77E9E1B45477C00A20E90 /* Model.xcdatamodeld in Sources */,
 				86D77EA11B45491600A20E90 /* VSPersistencyManager.m in Sources */,
-				86D2753C1B448A9C00BDD233 /* VSCitationView.m in Sources */,
+				86D2753C1B448A9C00BDD233 /* VSCitationFirstView.m in Sources */,
+				863C3B661B4961D9008C5E93 /* VSCitationSecondView.m in Sources */,
 				867A0B971B485418001B9794 /* RKDropdownAlert.m in Sources */,
 				86A95B031B434F7D006325B9 /* main.m in Sources */,
 			);
@@ -553,9 +573,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = App_Task/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -565,9 +586,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = App_Task/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

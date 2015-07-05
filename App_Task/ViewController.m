@@ -98,7 +98,6 @@
     VSWidgetViewController* pageContentViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"PageContentViewController"];
     
     pageContentViewController.pageIndex = index;
-
     return pageContentViewController;
 }
 

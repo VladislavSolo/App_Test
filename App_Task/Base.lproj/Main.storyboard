@@ -13,11 +13,10 @@
                         <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
@@ -32,68 +31,33 @@
                         <viewControllerLayoutGuide type="bottom" id="Noo-9O-tgF"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="0ni-Bh-bzE">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wTp-Pw-ctT">
-                                <rect key="frame" x="299" y="597" width="60" height="60"/>
-                                <state key="normal" image="twitter.png">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <state key="highlighted" image="twitter_h.png"/>
-                                <connections>
-                                    <action selector="actionTwitterShare:" destination="Jvj-UW-9wj" eventType="touchUpInside" id="K1G-or-TOW"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ihX-0C-1qR">
-                                <rect key="frame" x="16" y="597" width="60" height="60"/>
-                                <state key="normal" image="face.png">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <state key="highlighted" image="face_h.png"/>
-                                <connections>
-                                    <action selector="actionFacebookShare:" destination="Jvj-UW-9wj" eventType="touchUpInside" id="KUJ-5I-Swu"/>
-                                </connections>
-                            </button>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="79n-Bw-72q" customClass="ZLSwipeableView">
-                                <rect key="frame" x="56" y="76" width="262" height="380"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nof-mW-wGC">
-                                        <rect key="frame" x="110" y="8" width="136" height="45"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
+                                <rect key="frame" x="29" y="63" width="262" height="380"/>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
                         <outlet property="swipeableView" destination="79n-Bw-72q" id="17D-0m-BMx"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tDq-yl-rtN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="831.5" y="336.5"/>
+            <point key="canvasLocation" x="1030" y="336"/>
         </scene>
         <!--Page View Controller-->
         <scene sceneID="tMq-vH-k7f">
             <objects>
                 <pageViewController storyboardIdentifier="PageViewController" autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="1bI-CR-0k0" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="fZL-4I-GvU"/>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                 </pageViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lGs-CX-a0c" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="366.5" y="1146.5"/>
+            <point key="canvasLocation" x="366" y="1107"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="face.png" width="60" height="60"/>
-        <image name="face_h.png" width="60" height="60"/>
-        <image name="twitter.png" width="60" height="60"/>
-        <image name="twitter_h.png" width="60" height="60"/>
-    </resources>
 </document>

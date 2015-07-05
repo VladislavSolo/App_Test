@@ -8,10 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-@interface VSCitationView : UIView
+@interface VSCitationFirstView : UIView
 
-@property (strong, nonatomic) NSString* citationAuthor;
-@property (strong, nonatomic) NSString* citationText;
+@property (strong, nonatomic) UIButton *favouriteButton;
+@property (strong, nonatomic) UIButton *deleteButton;
 
 - (void)setCitationText:(NSString *)citationText andCitationAuthor:(NSString *)citationAuthor;
 
