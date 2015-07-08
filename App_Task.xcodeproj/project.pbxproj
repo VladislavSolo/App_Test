@@ -11,8 +11,6 @@
 		863C3B5E1B4952B9008C5E93 /* facebook.png in Resources */ = {isa = PBXBuildFile; fileRef = 863C3B5D1B4952B9008C5E93 /* facebook.png */; };
 		863C3B601B4956EB008C5E93 /* reverse.png in Resources */ = {isa = PBXBuildFile; fileRef = 863C3B5F1B4956EB008C5E93 /* reverse.png */; };
 		863C3B631B495E12008C5E93 /* delete.png in Resources */ = {isa = PBXBuildFile; fileRef = 863C3B621B495E12008C5E93 /* delete.png */; };
-		863C3B661B4961D9008C5E93 /* VSCitationSecondView.m in Sources */ = {isa = PBXBuildFile; fileRef = 863C3B651B4961D9008C5E93 /* VSCitationSecondView.m */; };
-		865738E31B49ACFB00AA7E67 /* Diagram.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 865738E21B49ACFB00AA7E67 /* Diagram.pdf */; };
 		867A0B971B485418001B9794 /* RKDropdownAlert.m in Sources */ = {isa = PBXBuildFile; fileRef = 867A0B961B485418001B9794 /* RKDropdownAlert.m */; };
 		867A0B9B1B4868F4001B9794 /* favourite.png in Resources */ = {isa = PBXBuildFile; fileRef = 867A0B9A1B4868F4001B9794 /* favourite.png */; };
 		867A0B9D1B486C96001B9794 /* list.png in Resources */ = {isa = PBXBuildFile; fileRef = 867A0B9C1B486C96001B9794 /* list.png */; };
@@ -24,13 +22,12 @@
 		86A95B111B434F7D006325B9 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 86A95B0F1B434F7D006325B9 /* LaunchScreen.xib */; };
 		86A95B1D1B434F7D006325B9 /* App_TaskTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 86A95B1C1B434F7D006325B9 /* App_TaskTests.m */; };
 		86C963E61B4880FC0083F1A4 /* twitter.png in Resources */ = {isa = PBXBuildFile; fileRef = 86C963E51B4880FC0083F1A4 /* twitter.png */; };
-		86CBDA7C1B45BF7B00882F21 /* VSCitationBlackList.m in Sources */ = {isa = PBXBuildFile; fileRef = 86CBDA7B1B45BF7B00882F21 /* VSCitationBlackList.m */; };
 		86D2752A1B446A1000BDD233 /* VSHTTPManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 86D275291B446A1000BDD233 /* VSHTTPManager.m */; };
 		86D2752E1B447AFE00BDD233 /* VSCitation.m in Sources */ = {isa = PBXBuildFile; fileRef = 86D2752D1B447AFE00BDD233 /* VSCitation.m */; };
 		86D275341B4486FC00BDD233 /* ZLPanGestureRecognizer.m in Sources */ = {isa = PBXBuildFile; fileRef = 86D275311B4486FC00BDD233 /* ZLPanGestureRecognizer.m */; };
 		86D275351B4486FC00BDD233 /* ZLSwipeableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 86D275331B4486FC00BDD233 /* ZLSwipeableView.m */; };
 		86D275381B4487AD00BDD233 /* VSWidgetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 86D275371B4487AD00BDD233 /* VSWidgetViewController.m */; };
-		86D2753C1B448A9C00BDD233 /* VSCitationFirstView.m in Sources */ = {isa = PBXBuildFile; fileRef = 86D2753B1B448A9C00BDD233 /* VSCitationFirstView.m */; };
+		86D2753C1B448A9C00BDD233 /* VSCitationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 86D2753B1B448A9C00BDD233 /* VSCitationView.m */; };
 		86D77E9E1B45477C00A20E90 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 86D77E9C1B45477C00A20E90 /* Model.xcdatamodeld */; };
 		86D77EA11B45491600A20E90 /* VSPersistencyManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 86D77EA01B45491600A20E90 /* VSPersistencyManager.m */; };
 		86D77EA51B454C7D00A20E90 /* VSCitationData.m in Sources */ = {isa = PBXBuildFile; fileRef = 86D77EA41B454C7D00A20E90 /* VSCitationData.m */; };
@@ -54,9 +51,6 @@
 		863C3B5D1B4952B9008C5E93 /* facebook.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = facebook.png; sourceTree = "<group>"; };
 		863C3B5F1B4956EB008C5E93 /* reverse.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = reverse.png; sourceTree = "<group>"; };
 		863C3B621B495E12008C5E93 /* delete.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = delete.png; sourceTree = "<group>"; };
-		863C3B641B4961D9008C5E93 /* VSCitationSecondView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VSCitationSecondView.h; path = VIew/VSCitationSecondView.h; sourceTree = SOURCE_ROOT; };
-		863C3B651B4961D9008C5E93 /* VSCitationSecondView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VSCitationSecondView.m; path = VIew/VSCitationSecondView.m; sourceTree = SOURCE_ROOT; };
-		865738E21B49ACFB00AA7E67 /* Diagram.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = Diagram.pdf; path = ../../../../Desktop/Diagram.pdf; sourceTree = "<group>"; };
 		867A0B921B483E7F001B9794 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		867A0B951B485418001B9794 /* RKDropdownAlert.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RKDropdownAlert.h; sourceTree = "<group>"; };
 		867A0B961B485418001B9794 /* RKDropdownAlert.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RKDropdownAlert.m; sourceTree = "<group>"; };
@@ -76,8 +70,6 @@
 		86A95B1B1B434F7D006325B9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		86A95B1C1B434F7D006325B9 /* App_TaskTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = App_TaskTests.m; sourceTree = "<group>"; };
 		86C963E51B4880FC0083F1A4 /* twitter.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = twitter.png; sourceTree = "<group>"; };
-		86CBDA7A1B45BF7B00882F21 /* VSCitationBlackList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VSCitationBlackList.h; path = Data/VSCitationBlackList.h; sourceTree = "<group>"; };
-		86CBDA7B1B45BF7B00882F21 /* VSCitationBlackList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VSCitationBlackList.m; path = Data/VSCitationBlackList.m; sourceTree = "<group>"; };
 		86D275291B446A1000BDD233 /* VSHTTPManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VSHTTPManager.m; path = API/VSHTTPManager.m; sourceTree = "<group>"; };
 		86D2752C1B447AFE00BDD233 /* VSCitation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VSCitation.h; path = Model/VSCitation.h; sourceTree = "<group>"; };
 		86D2752D1B447AFE00BDD233 /* VSCitation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VSCitation.m; path = Model/VSCitation.m; sourceTree = "<group>"; };
@@ -87,8 +79,8 @@
 		86D275331B4486FC00BDD233 /* ZLSwipeableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ZLSwipeableView.m; path = ZLSwipeableView/ZLSwipeableView.m; sourceTree = SOURCE_ROOT; };
 		86D275361B4487AD00BDD233 /* VSWidgetViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VSWidgetViewController.h; path = Controller/VSWidgetViewController.h; sourceTree = "<group>"; };
 		86D275371B4487AD00BDD233 /* VSWidgetViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VSWidgetViewController.m; path = Controller/VSWidgetViewController.m; sourceTree = "<group>"; };
-		86D2753A1B448A9C00BDD233 /* VSCitationFirstView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VSCitationFirstView.h; path = VIew/VSCitationFirstView.h; sourceTree = SOURCE_ROOT; };
-		86D2753B1B448A9C00BDD233 /* VSCitationFirstView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VSCitationFirstView.m; path = VIew/VSCitationFirstView.m; sourceTree = SOURCE_ROOT; };
+		86D2753A1B448A9C00BDD233 /* VSCitationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VSCitationView.h; path = VIew/VSCitationView.h; sourceTree = SOURCE_ROOT; };
+		86D2753B1B448A9C00BDD233 /* VSCitationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VSCitationView.m; path = VIew/VSCitationView.m; sourceTree = SOURCE_ROOT; };
 		86D275431B449A6A00BDD233 /* VSHTTPManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VSHTTPManager.h; path = API/VSHTTPManager.h; sourceTree = "<group>"; };
 		86D77E9D1B45477C00A20E90 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		86D77E9F1B45491600A20E90 /* VSPersistencyManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VSPersistencyManager.h; path = API/VSPersistencyManager.h; sourceTree = "<group>"; };
@@ -187,7 +179,6 @@
 				86A95B051B434F7D006325B9 /* AppDelegate.m */,
 				86A95B0D1B434F7D006325B9 /* Images.xcassets */,
 				86A95B0F1B434F7D006325B9 /* LaunchScreen.xib */,
-				865738E21B49ACFB00AA7E67 /* Diagram.pdf */,
 			);
 			path = App_Task;
 			sourceTree = "<group>";
@@ -263,10 +254,8 @@
 		86D275391B448A6A00BDD233 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				86D2753A1B448A9C00BDD233 /* VSCitationFirstView.h */,
-				86D2753B1B448A9C00BDD233 /* VSCitationFirstView.m */,
-				863C3B641B4961D9008C5E93 /* VSCitationSecondView.h */,
-				863C3B651B4961D9008C5E93 /* VSCitationSecondView.m */,
+				86D2753A1B448A9C00BDD233 /* VSCitationView.h */,
+				86D2753B1B448A9C00BDD233 /* VSCitationView.m */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -277,8 +266,6 @@
 				86D77E9C1B45477C00A20E90 /* Model.xcdatamodeld */,
 				86D77EA31B454C7D00A20E90 /* VSCitationData.h */,
 				86D77EA41B454C7D00A20E90 /* VSCitationData.m */,
-				86CBDA7A1B45BF7B00882F21 /* VSCitationBlackList.h */,
-				86CBDA7B1B45BF7B00882F21 /* VSCitationBlackList.m */,
 			);
 			name = DATA;
 			sourceTree = "<group>";
@@ -383,7 +370,6 @@
 				863C3B5E1B4952B9008C5E93 /* facebook.png in Resources */,
 				86A95B111B434F7D006325B9 /* LaunchScreen.xib in Resources */,
 				867A0B9B1B4868F4001B9794 /* favourite.png in Resources */,
-				865738E31B49ACFB00AA7E67 /* Diagram.pdf in Resources */,
 				86A95B0E1B434F7D006325B9 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -443,11 +429,9 @@
 				86D77EA51B454C7D00A20E90 /* VSCitationData.m in Sources */,
 				86D275341B4486FC00BDD233 /* ZLPanGestureRecognizer.m in Sources */,
 				86D2752E1B447AFE00BDD233 /* VSCitation.m in Sources */,
-				86CBDA7C1B45BF7B00882F21 /* VSCitationBlackList.m in Sources */,
 				86D77E9E1B45477C00A20E90 /* Model.xcdatamodeld in Sources */,
 				86D77EA11B45491600A20E90 /* VSPersistencyManager.m in Sources */,
-				86D2753C1B448A9C00BDD233 /* VSCitationFirstView.m in Sources */,
-				863C3B661B4961D9008C5E93 /* VSCitationSecondView.m in Sources */,
+				86D2753C1B448A9C00BDD233 /* VSCitationView.m in Sources */,
 				867A0B971B485418001B9794 /* RKDropdownAlert.m in Sources */,
 				86A95B031B434F7D006325B9 /* main.m in Sources */,
 			);

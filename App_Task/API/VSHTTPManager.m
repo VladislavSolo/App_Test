@@ -9,7 +9,7 @@
 #import "VSHTTPManager.h"
 #import "VSCitation.h"
 #import "VSPersistencyManager.h"
-#import <AFNetworking/AFHTTPRequestOperationManager.h>
+#import <AFNetworking/AFNetworking.h>
 #import <SystemConfiguration/SystemConfiguration.h>
 
 @interface VSHTTPManager ()
@@ -26,17 +26,19 @@
     if (self) {
         
         NSURL* baseURL = [NSURL URLWithString:@"http://api.forismatic.com/api/1.0/method=getQuote"];
-        
         self.requestOperationManager = [[AFHTTPRequestOperationManager alloc] initWithBaseURL:baseURL];
+        [self.requestOperationManager.requestSerializer setCachePolicy:(NSURLRequestReloadIgnoringLocalCacheData)];
     }
     return self;
 }
 
 - (void)getRandomCitationOnSuccess:(void(^)(VSCitation* citation))succeess onFailure:(void(^)(NSError* error))failure {
     
+    int key = arc4random() % 999999 + 111111;
+    
     NSDictionary *params = @{@"method": @"getQuote",
                              @"format": @"json",
-                             @"key"   : @"",
+                             @"key"   : [[NSString alloc] initWithFormat:@"%d", key],
                              @"lang"  : @"ru"};
     
     [self.requestOperationManager GET:@"getQuote"
@@ -66,7 +68,6 @@
         return YES;
     else
         return NO;
-    
 }
 
 @end

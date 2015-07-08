@@ -44,6 +44,7 @@
         VSCitationData* citationData = [NSEntityDescription insertNewObjectForEntityForName:@"VSCitationData"
                                                                      inManagedObjectContext:self.managedObjectContext];
         
+        citationData.isFavourite = YES;
         citationData.citationText = citation.citationText;
         citationData.citationAuthor = citation.citationAuthor;
         citationData.citationURL = citation.citationLink;
@@ -54,9 +55,9 @@
 
 - (void)setCitationToBlackList:(VSCitation *)citation {
     
-    VSCitationData* citationData = [NSEntityDescription insertNewObjectForEntityForName:@"VSCitationBlackList"
+    VSCitationData* citationData = [NSEntityDescription insertNewObjectForEntityForName:@"VSCitationData"
                                                                  inManagedObjectContext:self.managedObjectContext];
-    
+    citationData.isFavourite = NO;
     citationData.citationURL = citation.citationLink;
     
     [self saveContext];
@@ -69,9 +70,12 @@
     NSFetchRequest* fetchRequest = [[NSFetchRequest alloc] init];
     NSEntityDescription *description = [NSEntityDescription entityForName:@"VSCitationData"
                                                    inManagedObjectContext:self.managedObjectContext];
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"isFavourite = YES"];
+
     VSCitation* citation = [[VSCitation alloc] init];
     
     [fetchRequest setEntity:description];
+    [fetchRequest setPredicate:predicate];
     fetchRequest.fetchOffset = offset;
     fetchRequest.fetchLimit = 1;
     
@@ -99,10 +103,12 @@
 - (BOOL)isCitationInBlackList:(VSCitation *)citation {
     
     NSFetchRequest* fetchRequest = [[NSFetchRequest alloc] init];
-    NSEntityDescription *description = [NSEntityDescription entityForName:@"VSCitationBlackList"
+    NSEntityDescription *description = [NSEntityDescription entityForName:@"VSCitationData"
                                                    inManagedObjectContext:self.managedObjectContext];
     
-    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"citationURL = %@", citation.citationLink];
+    NSPredicate *linkPredicate = [NSPredicate predicateWithFormat:@"citationURL = %@", citation.citationLink];
+    NSPredicate *favoutitePredicate = [NSPredicate predicateWithFormat:@"isFavourite = %@", NO];
+    NSPredicate * predicate = [NSCompoundPredicate andPredicateWithSubpredicates:@[linkPredicate, favoutitePredicate]];
     
     [fetchRequest setPredicate:predicate];
     [fetchRequest setEntity:description];

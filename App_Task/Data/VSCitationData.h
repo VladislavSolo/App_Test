@@ -12,6 +12,7 @@
 
 @interface VSCitationData : NSManagedObject
 
+@property (nonatomic, assign) BOOL isFavourite;
 @property (nonatomic, retain) NSString * citationURL;
 @property (nonatomic, retain) NSString * citationText;
 @property (nonatomic, retain) NSString * citationAuthor;

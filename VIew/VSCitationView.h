@@ -8,11 +8,17 @@
 
 #import <UIKit/UIKit.h>
 
-@interface VSCitationFirstView : UIView
+@interface VSCitationView : UIView
 
 @property (strong, nonatomic) UIButton *favouriteButton;
 @property (strong, nonatomic) UIButton *deleteButton;
 
 - (void)setCitationText:(NSString *)citationText andCitationAuthor:(NSString *)citationAuthor;
+
+@end
+
+@interface VSCitationView (ViewWithButton)
+
+- (instancetype)initWithButtonAndFrame:(CGRect)frame;
 
 @end

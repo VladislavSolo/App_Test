@@ -583,7 +583,7 @@ int signum(CGFloat n) { return (n < 0) ? -1 : (n > 0) ? +1 : 0; }
                      }];
 }
 
-- (VSCitationFirstView *)topSwipeableView {
+- (VSCitationView *)topSwipeableView {
     return self.containerView.subviews.lastObject;
 }
 

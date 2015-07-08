@@ -8,8 +8,7 @@
 
 #import "VSWidgetViewController.h"
 #import "ZLSwipeableView.h"
-#import "VSCitationFirstView.h"
-#import "VSCitationSecondView.h"
+#import "VSCitationView.h"
 #import "VSHTTPManager.h"
 #import "VSPersistencyManager.h"
 #import "VSCitation.h"
@@ -73,9 +72,9 @@ NSString* const VSCitationDidChangeNotification = @"VSCitationDidChangeNotificat
 
     if (self.pageIndex == firstPage) {
         
-        UIImageView* favouriteView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"list.png"]];
-        favouriteView.frame = CGRectMake(self.view.frame.size.width/2 - 20, 15, 40, 40);
-        [self.view addSubview:favouriteView];
+        UIImageView* listView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"list.png"]];
+        listView.frame = CGRectMake(self.view.frame.size.width/2 - 20, 15, 40, 40);
+        [self.view.layer insertSublayer:listView.layer atIndex:0];
         
         UIImage* imageFacebook = [UIImage imageNamed:@"twitter.png"];
         CGRect facebookFrame = CGRectMake(self.swipeableView.frame.origin.x, 5*self.swipeableView.frame.size.height/4 + 10, 50, 40);
@@ -84,7 +83,7 @@ NSString* const VSCitationDidChangeNotification = @"VSCitationDidChangeNotificat
         [facebookButton setBackgroundImage:imageFacebook forState:UIControlStateNormal];
         [facebookButton addTarget:self action:@selector(actionTwitterShare:) forControlEvents:UIControlEventTouchUpInside];
         [facebookButton setShowsTouchWhenHighlighted:YES];
-        [self.view addSubview:facebookButton];
+        [self.view.layer insertSublayer:facebookButton.layer above:listView.layer];
         
         UIImage* imageTwitter = [UIImage imageNamed:@"facebook.png"];
         CGRect twitterFrame = CGRectMake(self.swipeableView.frame.size.width - 10, 5*self.swipeableView.frame.size.height/4, 60, 60);
@@ -93,13 +92,13 @@ NSString* const VSCitationDidChangeNotification = @"VSCitationDidChangeNotificat
         [twitterButton setBackgroundImage:imageTwitter forState:UIControlStateNormal];
         [twitterButton addTarget:self action:@selector(actionFacebookShare:) forControlEvents:UIControlEventTouchUpInside];
         [twitterButton setShowsTouchWhenHighlighted:YES];
-        [self.view addSubview:twitterButton];
+        [self.view.layer insertSublayer:twitterButton.layer below:listView.layer];
         
     } else {
         
         UIImageView* favouriteView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"favourite.png"]];
         favouriteView.frame = CGRectMake(self.view.frame.size.width/2 - 22, 11, 44, 44);
-        [self.view addSubview:favouriteView];
+        [self.view.layer insertSublayer:favouriteView.layer atIndex:0];
 
         UIImage* reverseImage = [UIImage imageNamed:@"reverse.png"];
         CGRect reverseFrame = CGRectMake(self.view.frame.size.width/2 - 30, 5*self.swipeableView.frame.size.height/4, 60, 60);
@@ -109,8 +108,7 @@ NSString* const VSCitationDidChangeNotification = @"VSCitationDidChangeNotificat
         [button setBackgroundImage:reverseImage forState:UIControlStateNormal];
         [button setShowsTouchWhenHighlighted:YES];
         [button addTarget:self action:@selector(actionShowCitationAgain:) forControlEvents:UIControlEventTouchUpInside];
-        
-        [self.view addSubview:button];
+        [self.view.layer addSublayer:button.layer];
     }
 }
 
@@ -253,19 +251,19 @@ NSString* const VSCitationDidChangeNotification = @"VSCitationDidChangeNotificat
 
     if (self.pageIndex == firstPage) {
         
-        VSCitationFirstView* view = [[VSCitationFirstView alloc] initWithFrame:self.swipeableView.bounds];
+        VSCitationView* view = [[VSCitationView alloc] initWithButtonAndFrame:self.swipeableView.bounds];
         view.backgroundColor = [UIColor blackColor];
         [view.favouriteButton addTarget:self action:@selector(actionSwipeRight) forControlEvents:UIControlEventTouchUpInside];
         [view.deleteButton addTarget:self action:@selector(actionSwipeLeft) forControlEvents:UIControlEventTouchUpInside];
         return view;
     } else {
         
-        VSCitationSecondView* view = [[VSCitationSecondView alloc] initWithFrame:self.swipeableView.bounds];
-        
+        VSCitationView* view = [[VSCitationView alloc] initWithFrame:self.swipeableView.bounds];
+        view.backgroundColor = [UIColor blackColor];
+        offset++;
         VSCitation* citation = [[VSPersistencyManager sharedManager] getCitationFromDataWithOffset:offset];
         
         [view setCitationText:citation.citationText andCitationAuthor:citation.citationAuthor];
-        offset++;
         
         return view;
     }

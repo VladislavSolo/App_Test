@@ -6,18 +6,14 @@
 //  Copyright (c) 2015 Vlad Stanishevskij. All rights reserved.
 //
 
-#import "VSCitationFirstView.h"
+#import "VSCitationView.h"
 
-@interface VSCitationFirstView ()
+@implementation VSCitationView
 
 {
     UITextView* citationView;
     UITextView* authorView;
 }
-
-@end
-
-@implementation VSCitationFirstView
 
 - (instancetype)init
 {
@@ -46,11 +42,21 @@
     return self;
 }
 
+- (instancetype)initWithButtonAndFrame:(CGRect)frame {
+    
+    self = [super initWithFrame:frame];
+    if (self) {
+        [self setup];
+        [self setupSwipeButton];
+    }
+    return self;
+}
+
 - (void)setup {
     
     self.layer.borderWidth = 2;
     self.layer.borderColor = [[UIColor whiteColor] CGColor] ;
-    self.layer.shadowColor = [UIColor lightGrayColor].CGColor;
+    self.layer.shadowColor = [UIColor blackColor].CGColor;
     self.layer.shadowOpacity = 0.33;
     self.layer.shadowOffset = CGSizeMake(0, 1.5);
     self.layer.shadowRadius = 4.0;
@@ -71,13 +77,15 @@
     authorView.font = [UIFont italicSystemFontOfSize:16.0];
     authorView.backgroundColor = [UIColor blackColor];
     [self addSubview:authorView];
+}
+
+- (void)setupSwipeButton {
     
     UIImage* favouriteImage = [UIImage imageNamed:@"favourite.png"];
     CGRect favouriteFrame = CGRectMake(self.frame.size.width - 90, self.frame.size.height - 90, 70, 70);
     
     self.favouriteButton = [[UIButton alloc] initWithFrame:favouriteFrame];
     [self.favouriteButton setBackgroundImage:favouriteImage forState:UIControlStateNormal];
-    //[facebookButton addTarget:self action:@selector(actionFacebookShare:) forControlEvents:UIControlEventTouchUpInside];
     [self.favouriteButton setShowsTouchWhenHighlighted:YES];
     [self addSubview:self.favouriteButton];
     
@@ -86,7 +94,6 @@
     
     self.deleteButton = [[UIButton alloc] initWithFrame:deleteFrame];
     [self.deleteButton setBackgroundImage:deleteImage forState:UIControlStateNormal];
-    //[facebookButton addTarget:self action:@selector(actionFacebookShare:) forControlEvents:UIControlEventTouchUpInside];
     [self.deleteButton setShowsTouchWhenHighlighted:YES];
     [self addSubview:self.deleteButton];
 }
