@@ -11,6 +11,7 @@
 
 @implementation VSCitationData
 
+@dynamic isFavourite;
 @dynamic citationURL;
 @dynamic citationText;
 @dynamic citationAuthor;

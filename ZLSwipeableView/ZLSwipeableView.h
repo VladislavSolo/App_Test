@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@class VSCitationFirstView;
+@class VSCitationView;
 
 typedef NS_ENUM(NSUInteger, ZLSwipeableViewDirection) {
     ZLSwipeableViewDirectionNone = 0,
@@ -100,7 +100,7 @@ typedef NS_ENUM(NSUInteger, ZLSwipeableViewDirection) {
 @property (nonatomic) CGFloat programaticSwipeRotationRelativeYOffsetFromCenter;
 
 /// The currently displayed top most view.
-@property (nonatomic, readonly) VSCitationFirstView *topSwipeableView;
+@property (nonatomic, readonly) VSCitationView *topSwipeableView;
 
 /// Discard all swipeable views on the screen.
 - (void)discardAllSwipeableViews;
